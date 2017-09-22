@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.robotclient.santosh.robotclient.view.activity.PepperMainActivity">
+
+    <TextureView
+        android:id="@+id/textureView"
+        android:layout_width="0dp"
+        android:layout_height="643dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.robotclient.santosh.robotclient.view.CircularSeekBar
+    android:id="@+id/angle_sb"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical|center_horizontal"
+    app:circle_x_radius="200dp"
+    app:circle_y_radius="100dp"
+    app:end_angle="0"
+    app:max="100"
+    app:pointer_alpha_ontouch="100"
+    app:pointer_color="#ff0000"
+    app:pointer_halo_color="#44ff0000"
+    app:progress="25"
+    app:start_angle="180"
+    app:use_custom_radii="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginBottom="8dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/stop_tv"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:text="Stop"
+        android:onClick="onClick"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/left_tv"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="left|center_vertical"
+        android:background="@mipmap/left"
+        android:longClickable="true"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/right_tv"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="right|center_vertical"
+        android:background="@mipmap/right"
+        android:longClickable="true"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/top_tv"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_gravity="top|center_horizontal"
+        android:background="@mipmap/top"
+        android:longClickable="true"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/bottom_tv"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@mipmap/bottom"
+        android:longClickable="true"
+        android:onClick="onClick" />
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone">
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="gone" />
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <TextureView
+            android:id="@+id/textureVieww"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Capture Image"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

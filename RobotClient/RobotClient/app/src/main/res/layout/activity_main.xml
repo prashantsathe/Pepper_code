@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.robotclient.santosh.robotclient.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/camera_preview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="20dp"
+            android:background="#000000">
+
+            <TextView
+                android:id="@+id/stop_tv"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:text="Stop"
+                android:onClick="onClick" />
+
+            <com.robotclient.santosh.robotclient.view.CircularSeekBar
+                android:id="@+id/angle_sb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:circle_x_radius="200dp"
+                app:circle_y_radius="100dp"
+                app:end_angle="0"
+                app:max="100"
+                app:pointer_alpha_ontouch="100"
+                app:pointer_color="#ff0000"
+                app:pointer_halo_color="#44ff0000"
+                app:progress="25"
+                app:start_angle="180"
+                app:use_custom_radii="true" />
+            <!-- app:pointer_color="#0174DF"
+               app:pointer_halo_color="#880174DF"-->
+
+            <TextView
+                android:id="@+id/left_tv"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="left|center_vertical"
+                android:background="@mipmap/left"
+                android:onClick="onClick" />
+
+            <TextView
+                android:id="@+id/right_tv"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="right|center_vertical"
+                android:background="@mipmap/right"
+                android:onClick="onClick" />
+
+            <TextView
+                android:id="@+id/top_tv"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="top|center_horizontal"
+                android:background="@mipmap/top"
+                android:onClick="onClick" />
+
+            <TextView
+                android:id="@+id/bottom_tv"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@mipmap/bottom"
+                android:onClick="onClick" />
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

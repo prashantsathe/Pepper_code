@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RobotClient</string>
+    <string name="title_activity_seek_bar">SeekBarActivity</string>
+</resources>
