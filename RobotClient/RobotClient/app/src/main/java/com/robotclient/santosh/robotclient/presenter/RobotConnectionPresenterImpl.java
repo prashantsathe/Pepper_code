@@ -20,8 +20,8 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class RobotConnectionPresenterImpl implements RobotConnectionPresenter{
-    private final static String HOST_NAME = "10.9.45.11"; /*"10.9.45.43"*/;
-    private final static int PORT_NUMBER =/* 9999;*/ 9999;
+    private final static String HOST_NAME = "10.9.45.11";  /*"10.9.43.183";*/ // 43
+    private final static int PORT_NUMBER =9999; /*4456;*/
     private static final String TAG = RobotConnectionPresenterImpl.class.getName();
     private ThreadExecutor threadExecutor;
     private Socket hostSocket;
@@ -49,10 +49,10 @@ public class RobotConnectionPresenterImpl implements RobotConnectionPresenter{
             in = new BufferedReader(new InputStreamReader(hostSocket.getInputStream()));
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + HOST_NAME);
-            System.exit(1);
+           // System.exit(1);
         } catch (IOException e) {
             System.err.println("Couldn't get I/O for the connection to " + HOST_NAME);
-            System.exit(1);
+           // System.exit(1);
         }
     }
 

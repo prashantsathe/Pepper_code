@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       // setupCamera();
+        setupCamera();
         init();
     }
 
@@ -201,10 +201,7 @@ public class MainActivity extends AppCompatActivity {
             CircularSeekBar.OnCircularSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(CircularSeekBar circularSeekBar, int progress, boolean fromUser) {
-                    /*robotNavigation.updateNavigationTheta(progress);
-                    robotConnectionPresenter.writeToConnection(createCommand(0, 0, progress));*/
-
-                    Log.d("Robot","Moving to"+progress);
+                    robotNavigation.updateNavigationTheta(progress);
                 }
 
                 @Override

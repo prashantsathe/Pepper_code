@@ -11,7 +11,9 @@ public interface RobotNavigation {
     public String moveBackward();
     public String moveToLeftTheta();
     public String moveToRightTheta();
-    public String moveStright();
+    public String moveStraight();
     public String stop();
     public void updateNavigationTheta(int progress);
+    public String navigate();
+    public String localize();
 }

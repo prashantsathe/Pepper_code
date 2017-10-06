@@ -6,6 +6,7 @@ import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -25,6 +26,8 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.robotclient.santosh.robotclient.R;
+import com.robotclient.santosh.robotclient.presenter.PermissionsPresenter;
+import com.robotclient.santosh.robotclient.presenter.PermissionsPresenterImpl;
 import com.robotclient.santosh.robotclient.presenter.RobotConnectionPresenter;
 import com.robotclient.santosh.robotclient.presenter.RobotConnectionPresenterImpl;
 import com.robotclient.santosh.robotclient.presenter.RobotNavigation;
@@ -36,15 +39,16 @@ import com.robotclient.santosh.robotclient.view.CircularSeekBar;
 import java.io.IOException;
 
 public class PepperMainActivity extends AppCompatActivity implements SurfaceHolder.Callback, MediaPlayer.OnPreparedListener,
-        View.OnTouchListener {
+PermissionsPresenter.Callback,View.OnTouchListener{
     private static final String TAG = PepperMainActivity.class.getName();
     private SurfaceHolder surfaceHolder;
     private MediaPlayer mediaPlayer;
-    final static String RTSP_URL = "http://videocdn.bodybuilding.com/video/mp4/62000/62792m.mp4"; //"tcp://10.9.45.84:9559" ;
+    final static String RTSP_URL = /*"http://videocdn.bodybuilding.com/video/mp4/62000/62792m.mp4";*/  "tcp://10.9.45.11:3001";
     private TextureViewPresenter textureViewPresenter;
     private RobotConnectionPresenter robotConnectionPresenter = new RobotConnectionPresenterImpl();
     private RobotNavigation robotNavigation= new RobotNavigationPresenterImpl();
-    private static Boolean initBar = false;
+    private PermissionsPresenter permissionsPresenter = new PermissionsPresenterImpl(this);
+	private static Boolean initBar = false;
     private TextView mTvTop;
     private CircularSeekBar circularSeekBar;
     @Override
@@ -52,35 +56,36 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         Window window = getWindow();
-        Log.d(TAG,"onCreate()");
         window.setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         window.setBackgroundDrawableResource(android.R.color.black);
         setContentView(R.layout.activity_pepper_main);
-        mTvTop = (TextView)findViewById(R.id.top_tv) ;
-        mTvTop.setOnTouchListener(this);
         //setupVideoView();
         //setupVideoView1();
         //setupMediaRetriever();
         //setupTextureView();
-        init();
+		init();
+        permissionsPresenter.requestPermission(this);
     }
-
-    private void init() {
+	
+	 private void init() {
         circularSeekBar = (CircularSeekBar) findViewById(R.id.angle_sb);
         circularSeekBar.setOnSeekBarChangeListener(seekBarChangeListener);
-        circularSeekBar.setProgress(50);
+        //circularSeekBar.setProgress(50);
+        mTvTop = (TextView)findViewById(R.id.top_tv) ;
+        //mTvTop.setOnTouchListener(this);
+         mTvTop.setOnTouchListener(forwardTouch);
     }
 
 
-    private void setupVideoView()   {
+    /*private void setupVideoView()   {
         SurfaceView surfaceView =
                 (SurfaceView) findViewById(R.id.surfaceView);
         surfaceHolder = surfaceView.getHolder();
         surfaceHolder.addCallback(this);
         surfaceHolder.setFixedSize(320, 240);
-    }
+    }*/
 
     @Override
     public void surfaceCreated(final SurfaceHolder surfaceHolder) {
@@ -100,7 +105,7 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
                 }
             }
         });
-        thread.start();
+        thread.start();*/
 
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setDisplay(surfaceHolder);
@@ -111,7 +116,7 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
             mediaPlayer.prepareAsync();
         } catch (IOException e) {
             e.printStackTrace();
-        } */
+        }
 
     }
 
@@ -131,7 +136,7 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
     }
 
 
-    private void setupVideoView1()   {
+    /*private void setupVideoView1()   {
         VideoView myVideoView = (VideoView)findViewById(R.id.videoView);
         myVideoView.setVideoURI(Uri.parse(RTSP_URL));
         android.widget.MediaController mediaController = new android.widget.MediaController(this);
@@ -139,10 +144,10 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
         myVideoView.setMediaController(mediaController);
         myVideoView.requestFocus();
         myVideoView.start();
-    }
+    }*/
 
 
-    private void setupMediaRetriever()  {
+   /* private void setupMediaRetriever()  {
         final MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
         mediaMetadataRetriever.setDataSource(RTSP_URL);
         final VideoView myVideoView = (VideoView)findViewById(R.id.videoView);
@@ -186,7 +191,7 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
                 }
 
             }});
-    }
+    }*/
     private  TextureView textureView;
     private void setupTextureView() {
         textureView = (TextureView) findViewById(R.id.textureView);
@@ -252,14 +257,14 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
                     //mp.setAudioStreamType(AudioManager.STREAM_MUSIC);
                     mp.start();
 
-                    Button b = (Button) findViewById(R.id.button);
+                   /* Button b = (Button) findViewById(R.id.button);
                     b.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             // threadExecutor.execute();
                             textureViewPresenter.saveFrame();
                         }
-                    });
+                    });*/
                 } catch (IllegalArgumentException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -300,34 +305,29 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
         try {
             switch (view.getId()) {
                 case R.id.left_tv:
-                    //textureViewPresenter.saveFrame();
-                    //mCamera.takePicture(null, null, mPicture);
-                    //command = robotNavigation.moveToLeft();
-                    //robotConnectionPresenter.writeToConnection(command);
+                 //   textureViewPresenter.saveFrame();
+                    command = robotNavigation.localize();
+                    robotConnectionPresenter.writeToConnection(command);
                     break;
                 case R.id.right_tv:
-                    //mCamera.takePicture(null, null, mPicture);
-                    //textureViewPresenter.saveFrame();
-                    //command=robotNavigation.moveToRight();
-                    //robotConnectionPresenter.writeToConnection(command);
+                //    textureViewPresenter.saveFrame();
+                    command=robotNavigation.navigate();
+                    robotConnectionPresenter.writeToConnection(command);
                     break;
                 case R.id.top_tv:
-                    //textureViewPresenter.saveFrame();
-                    //mCamera.takePicture(null, null, mPicture);
+                //    textureViewPresenter.saveFrame();
                     command = robotNavigation.stop();
                     robotConnectionPresenter.writeToConnection(command);
                     break;
-                case R.id.bottom_tv:
-                    //textureViewPresenter.saveFrame();
-                    // mCamera.takePicture(null, null, mPicture);
-                    //command = robotNavigation.moveBackward();
-                    //robotConnectionPresenter.writeToConnection(command);
-                    break;
+                /*case R.id.bottom_tv:
+                 //   textureViewPresenter.saveFrame();
+                    command = robotNavigation.moveBackward();
+                    robotConnectionPresenter.writeToConnection(command);
+                    break;*/
                 case R.id.stop_tv:
-                    textureViewPresenter.saveFrame();
-                    // mCamera.takePicture(null, null, mPicture);
-                    //command = robotNavigation.stop();
-                    //robotConnectionPresenter.writeToConnection(command);
+                 //   textureViewPresenter.saveFrame();
+                    command = robotNavigation.stop();
+                   robotConnectionPresenter.writeToConnection(command);
                     break;
                 default:
             }
@@ -335,12 +335,8 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
             e.printStackTrace();
         }
     }
-    private String createCommand(float x, float y, float theta){
-        StringBuilder sb = new StringBuilder();
-        String command = sb.append(x).append(":").append(y).append(":").append(theta).toString();
-        return command;
-    }
-    private CircularSeekBar.OnCircularSeekBarChangeListener seekBarChangeListener = new
+	
+	private CircularSeekBar.OnCircularSeekBarChangeListener seekBarChangeListener = new
             CircularSeekBar.OnCircularSeekBarChangeListener() {
                 String command;
                 @Override
@@ -363,9 +359,11 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
 
                 @Override
                 public void onStopTrackingTouch(CircularSeekBar seekBar) {
+                    initBar=false;
                     command = robotNavigation.stop();
                     robotConnectionPresenter.writeToConnection(command);
                     circularSeekBar.setProgress(50);
+
                 }
 
                 @Override
@@ -374,16 +372,55 @@ public class PepperMainActivity extends AppCompatActivity implements SurfaceHold
                 }
             };
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        permissionsPresenter.onRequestPermissionsResult(requestCode,permissions,grantResults);
+    }
 
     @Override
+    public void onPermissionsGranted() {
+        setupTextureView();
+    }
+
+    @Override
+    public void onPermissionsDenied() {
+
+    }
+	
+	@Override
     public boolean onTouch(View view, MotionEvent event) {
         boolean isReleased = event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL;
         boolean isPressed = event.getAction() == MotionEvent.ACTION_DOWN;
 
         if (isPressed) {
-            String command =robotNavigation.moveStright();
+            String command =robotNavigation.moveStraight();
             robotConnectionPresenter.writeToConnection(command);
         }
         return false;
     }
+
+
+    private View.OnTouchListener forwardTouch = new View.OnTouchListener() {
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            int x = (int) event.getX();
+            int y = (int) event.getY();
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    String command =robotNavigation.moveStraight();
+                    robotConnectionPresenter.writeToConnection(command);
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    // Do nothing
+                    break;
+                case MotionEvent.ACTION_UP:
+                    command = robotNavigation.stop();
+                    robotConnectionPresenter.writeToConnection(command);
+                    break;
+            }
+            return true;
+        }
+    };
 }

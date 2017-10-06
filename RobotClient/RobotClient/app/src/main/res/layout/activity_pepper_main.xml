@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context="com.robotclient.santosh.robotclient.view.activity.PepperMainActivity">
 
     <TextureView
@@ -27,7 +28,7 @@
     app:pointer_alpha_ontouch="100"
     app:pointer_color="#ff0000"
     app:pointer_halo_color="#44ff0000"
-    app:progress="25"
+    app:progress="50"
     app:start_angle="180"
     app:use_custom_radii="true"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -58,14 +59,13 @@
 
     <TextView
         android:id="@+id/left_tv"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_gravity="left|center_vertical"
-        android:background="@mipmap/left"
-        android:longClickable="true"
+        android:background="@mipmap/location_icon"
         android:onClick="onClick" />
 
     <TextView
@@ -76,23 +76,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_gravity="right|center_vertical"
-        android:background="@mipmap/right"
-        android:longClickable="true"
+        android:background="@mipmap/navigation_icon"
         android:onClick="onClick" />
 
     <TextView
         android:id="@+id/top_tv"
         android:layout_width="32dp"
         android:layout_height="32dp"
+        android:layout_margin="20dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_gravity="top|center_horizontal"
         android:background="@mipmap/top"
-        android:longClickable="true"
         android:onClick="onClick" />
 
-    <TextView
+   <!-- <TextView
         android:id="@+id/bottom_tv"
         android:layout_width="32dp"
         android:layout_height="32dp"
@@ -101,11 +100,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_gravity="bottom|center_horizontal"
         android:background="@mipmap/bottom"
-        android:longClickable="true"
-        android:onClick="onClick" />
+        android:onClick="onClick" />-->
 
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   <!-- <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -137,6 +135,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
             android:text="Capture Image"/>
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 </android.support.constraint.ConstraintLayout>

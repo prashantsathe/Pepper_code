@@ -8,55 +8,59 @@ import com.robotclient.santosh.robotclient.domain.utils.RobotUtility;
  */
 
 public class RobotNavigationPresenterImpl implements RobotNavigation{
+    private String MOVETOWARD="moveToward";
+    private String STOPMOVE="stopMove";
+    private String NAVIGATE ="navigate";
+    private String LOCALIZE ="localize";
     private double MAX_PROGRESS=100;
     private double leftToRightTheta;
     private double rightToLeftTheta;
     @Override
     public String moveToLeft() {
-        String command = generateRobotCommand(0.5,0.0,rightToLeftTheta,"moveToward");
+        String command = generateRobotCommand(0.5,0.0,rightToLeftTheta,MOVETOWARD);
         return command;
     }
 
     @Override
     public String moveToRight() {
-        String command =generateRobotCommand(0.5,0.0,leftToRightTheta,"moveToward");
+        String command =generateRobotCommand(0.5,0.0,leftToRightTheta,MOVETOWARD);
         return command;
     }
 
     @Override
     public String moveForward() {
-        String command =generateRobotCommand(1,0.0,0.0,"moveToward");
+        String command =generateRobotCommand(1,0.0,0.0,MOVETOWARD);
         return command;
     }
 
     @Override
     public String moveBackward() {
-        String command =generateRobotCommand(-0.5,0.0,0.0,"moveToward");
+        String command =generateRobotCommand(-0.5,0.0,0.0,MOVETOWARD);
         return command;
     }
 
     @Override
     public String moveToLeftTheta() {
-        String command =generateRobotCommand(0.0,0.0,rightToLeftTheta,"moveToward");
+        String command =generateRobotCommand(0.0,0.0,rightToLeftTheta,MOVETOWARD);
         return command;
     }
 
     @Override
     public String moveToRightTheta() {
-        String command =generateRobotCommand(0.0,0.0,leftToRightTheta,"moveToward");
+        String command =generateRobotCommand(0.0,0.0,leftToRightTheta,MOVETOWARD);
         return command;
     }
 
     @Override
-    public String moveStright() {
-        String command =generateRobotCommand(0.5,0.0,0,"moveToward");
+    public String moveStraight() {
+        String command =generateRobotCommand(1.0,0.0,0,MOVETOWARD);
         return command;
     }
 
 
     @Override
     public String stop() {
-        String command =generateRobotCommand(0.0,0.0,0.0,"stopMove");
+        String command =generateRobotCommand(0.0,0.0,0.0,STOPMOVE);
         return command;
     }
 
@@ -66,6 +70,17 @@ public class RobotNavigationPresenterImpl implements RobotNavigation{
         rightToLeftTheta = (progress-MAX_PROGRESS)/MAX_PROGRESS; //Anti clock wise rotation
     }
 
+    @Override
+    public String navigate() {
+        String command =generateRobotCommand(0.0,0.0,0.0,NAVIGATE);
+        return command;
+    }
+
+    @Override
+    public String localize() {
+        String command =generateRobotCommand(0.0,0.0,0.0,LOCALIZE);
+        return command;
+    }
     private String generateRobotCommand(double x, double y, double theta,String apiType) {
         RobotCommand robotCommand = new RobotCommand();
         RobotCommand.Command command = new RobotCommand.Command();
@@ -76,7 +91,7 @@ public class RobotNavigationPresenterImpl implements RobotNavigation{
         command.setApi(apiType);
         command.setParameters(parameters);
         robotCommand.setCommand(command);
-        String jsonString = RobotUtility.createCommandJson(robotCommand) + "\n";
+        String jsonString = RobotUtility.createCommandJson(robotCommand) ;
         return jsonString;
     }
 
