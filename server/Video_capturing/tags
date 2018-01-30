@@ -1,0 +1,163 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+COMMAND_BACK	webSocketServer.py	/^COMMAND_BACK = 'BACK'$/;"	v
+COMMAND_DISCONNECT	webSocketServer.py	/^COMMAND_DISCONNECT = 'DISCONNECT'$/;"	v
+COMMAND_FORWARD	webSocketServer.py	/^COMMAND_FORWARD = 'FORWARD'$/;"	v
+COMMAND_HEADPITCH	webSocketServer.py	/^COMMAND_HEADPITCH = 'HEADPITCH' # ???$/;"	v
+COMMAND_HEADYAW	webSocketServer.py	/^COMMAND_HEADYAW = 'HEADYAW' 	# ???$/;"	v
+COMMAND_LEFT	webSocketServer.py	/^COMMAND_LEFT = 'LEFT'$/;"	v
+COMMAND_REST	webSocketServer.py	/^COMMAND_REST = 'REST'$/;"	v
+COMMAND_RIGHT	webSocketServer.py	/^COMMAND_RIGHT = 'RIGHT'$/;"	v
+COMMAND_SAY	webSocketServer.py	/^COMMAND_SAY = 'SAY'$/;"	v
+COMMAND_SENSOR	webSocketServer.py	/^COMMAND_SENSOR = 'SENSOR'$/;"	v
+COMMAND_SIT	webSocketServer.py	/^COMMAND_SIT='SIT'$/;"	v
+COMMAND_STOP	webSocketServer.py	/^COMMAND_STOP = 'STOP'$/;"	v
+COMMAND_TURNLEFT	webSocketServer.py	/^COMMAND_TURNLEFT = 'TURNLEFT'$/;"	v
+COMMAND_TURNRIGHT	webSocketServer.py	/^COMMAND_TURNRIGHT = 'TURNRIGHT'$/;"	v
+COMMAND_WAKEUP	webSocketServer.py	/^COMMAND_WAKEUP = 'WAKEUP'$/;"	v
+Connect	templates/index_new.html	/^function Connect()$/;"	f
+PORT_NUMBER	httpServer.py	/^PORT_NUMBER = 800$/;"	v
+SimpleEcho	webSocketServer.py	/^class SimpleEcho(WebSocket):$/;"	c
+VideoCamera	camera.py	/^class VideoCamera(object):$/;"	c
+WebServerThread	httpServer.py	/^def WebServerThread():$/;"	f
+__author__	httpServer.py	/^	__author__ = 'Leo Fabiano'$/;"	v
+__author__	webSocketServer.py	/^__author__ = 'Leo Fabiano'$/;"	v
+__del__	camera.py	/^    def __del__(self):$/;"	m	class:VideoCamera	file:
+__init__	camera.py	/^    def __init__(self):$/;"	m	class:VideoCamera
+app	videoserver.py	/^app = Flask(__name__)$/;"	v
+args	webSocketServer.py	/^    args = parser.parse_args()$/;"	v
+blink	httpServer.py	/^blink = True$/;"	v
+camera	webSocketServer.py	/^camera='camera'$/;"	v
+clearText	templates/index.html	/^  function clearText() {$/;"	f
+clearText	templates/index_2.html	/^  function clearText() {$/;"	f
+clearText	templates/index_new.html	/^  function clearText() {$/;"	f
+clearText	templates/proba.html	/^  function clearText() {$/;"	f
+closeNav	templates/index_2.html	/^function closeNav() {$/;"	f
+closeNav	templates/index_new.html	/^function closeNav() {$/;"	f
+closecmdNav	templates/index_new.html	/^function closecmdNav() {$/;"	f
+cmdARMREST	templates/index_new.html	/^ function cmdARMREST(){   doSend('ARMREST');  }$/;"	f
+cmdBACK	templates/index_new.html	/^function cmdBACK(){   doSend('BACK');  }$/;"	f
+cmdDISCONNECT	templates/index_new.html	/^function cmdDISCONNECT(){   doSend('DISCONNECT');  }$/;"	f
+cmdFORWARD	templates/index_new.html	/^function cmdFORWARD(){   doSend('FORWARD');  }$/;"	f
+cmdHEADPITCH	templates/index_new.html	/^function cmdHEADPITCH(){   doSend('HEADPITCH');  }$/;"	f
+cmdHEADYAW	templates/index_new.html	/^function cmdHEADYAW(){   doSend('HEADYAW');  }$/;"	f
+cmdLARMCLOSE	templates/index_new.html	/^function cmdLARMCLOSE(){   doSend('LARMCLOSE');  }$/;"	f
+cmdLARMDOWN	templates/index_new.html	/^function cmdLARMDOWN(){   doSend('LARMDOWN');  }$/;"	f
+cmdLARMOPEN	templates/index_new.html	/^function cmdLARMOPEN(){   doSend('LARMOPEN');  }$/;"	f
+cmdLARMUP	templates/index_new.html	/^function cmdLARMUP(){   doSend('LARMUP');  }$/;"	f
+cmdLEFT	templates/index_new.html	/^function cmdLEFT(){   doSend('LEFT');  }$/;"	f
+cmdMUSIC_DOWN	templates/index_new.html	/^function cmdMUSIC_DOWN(){   doSend('MUSIC_DOWN');  }$/;"	f
+cmdMUSIC_FORWARD	templates/index_new.html	/^function cmdMUSIC_FORWARD(){   doSend('MUSIC_FORWARD');  }$/;"	f
+cmdMUSIC_NEXT	templates/index_new.html	/^function cmdMUSIC_NEXT(){   doSend('MUSIC_NEXT');  }$/;"	f
+cmdMUSIC_OFF	templates/index_new.html	/^function cmdMUSIC_OFF(){   doSend('MUSIC_OFF');  }$/;"	f
+cmdMUSIC_ON	templates/index_new.html	/^function cmdMUSIC_ON(){   doSend('MUSIC_ON');  }$/;"	f
+cmdMUSIC_PAUSE	templates/index_new.html	/^function cmdMUSIC_PAUSE(){   doSend('MUSIC_PAUSE');  }$/;"	f
+cmdMUSIC_PLAY	templates/index_new.html	/^function cmdMUSIC_PLAY(){   doSend('MUSIC_PLAY');  }$/;"	f
+cmdMUSIC_PREVIOUS	templates/index_new.html	/^function cmdMUSIC_PREVIOUS(){   doSend('MUSIC_PREVIOUS');  }$/;"	f
+cmdMUSIC_REWIND	templates/index_new.html	/^function cmdMUSIC_REWIND(){   doSend('MUSIC_REWIND');  }$/;"	f
+cmdMUSIC_UP	templates/index_new.html	/^function cmdMUSIC_UP(){   doSend('MUSIC_UP');  }$/;"	f
+cmdMUSIC_URL	templates/index_new.html	/^function cmdMUSIC_URL(){   doSend('MUSIC_URL');  }$/;"	f
+cmdOBSTACLE	templates/index_new.html	/^function cmdOBSTACLE(){   doSend('OBSTACLE');  }$/;"	f
+cmdPOSTURE_CROUCH	templates/index_new.html	/^function cmdPOSTURE_CROUCH(){   doSend('POSTURE_CROUCH');  }$/;"	f
+cmdPOSTURE_CUSTOMER	templates/index_new.html	/^function cmdPOSTURE_CUSTOMER(){   doSend('POSTURE_CUSTOMER');  }$/;"	f
+cmdPOSTURE_DELETE	templates/index_new.html	/^function cmdPOSTURE_DELETE(){   doSend('POSTURE_DELETE');  }$/;"	f
+cmdPOSTURE_LYINGBACK	templates/index_new.html	/^function cmdPOSTURE_LYINGBACK(){   doSend('POSTURE_LYINGBACK');  }$/;"	f
+cmdPOSTURE_LYINGBELLY	templates/index_new.html	/^function cmdPOSTURE_LYINGBELLY(){   doSend('POSTURE_LYINGBELLY');  }$/;"	f
+cmdPOSTURE_RECORD	templates/index_new.html	/^function cmdPOSTURE_RECORD(){   doSend('POSTURE_RECORD');  }$/;"	f
+cmdPOSTURE_RECORD_STOP	templates/index_new.html	/^function cmdPOSTURE_RECORD_STOP(){   doSend('POSTURE_RECORD_STOP');  }$/;"	f
+cmdPOSTURE_SIT	templates/index_new.html	/^function cmdPOSTURE_SIT(){   doSend('POSTURE_SIT');  }$/;"	f
+cmdPOSTURE_SITRELAX	templates/index_new.html	/^function cmdPOSTURE_SITRELAX(){   doSend('POSTURE_SITRELAX');  }$/;"	f
+cmdPOSTURE_STADN	templates/index_new.html	/^function cmdPOSTURE_STADN(){   doSend('POSTURE_STADN');  }$/;"	f
+cmdPOSTURE_STADNINIT	templates/index_new.html	/^function cmdPOSTURE_STADNINIT(){   doSend('POSTURE_STADNINIT');  }$/;"	f
+cmdPOSTURE_STADNZERO	templates/index_new.html	/^function cmdPOSTURE_STADNZERO(){   doSend('POSTURE_STADNZERO');  }$/;"	f
+cmdRARMCLOSE	templates/index_new.html	/^function cmdRARMCLOSE(){   doSend('RARMCLOSE');  }$/;"	f
+cmdRARMDOWN	templates/index_new.html	/^function cmdRARMDOWN(){   doSend('RARMDOWN');  }$/;"	f
+cmdRARMOPEN	templates/index_new.html	/^function cmdRARMOPEN(){   doSend('RARMOPEN');  }$/;"	f
+cmdRARMUP	templates/index_new.html	/^function cmdRARMUP(){   doSend('RARMUP');  }$/;"	f
+cmdREST	templates/index_new.html	/^function cmdREST(){   doSend('REST');  }$/;"	f
+cmdRIGHT	templates/index_new.html	/^function cmdRIGHT(){   doSend('RIGHT');  }$/;"	f
+cmdSAY	templates/index_new.html	/^function cmdSAY(){   doSend('SAY');  }$/;"	f
+cmdSENSOR	templates/index_new.html	/^function cmdSENSOR(){   doSend('SENSOR');  }$/;"	f
+cmdSTOP	templates/index_new.html	/^function cmdSTOP(){   doSend('STOP');  }$/;"	f
+cmdSWITCH_CAMERA	templates/index_new.html	/^function cmdSWITCH_CAMERA(){   doSend('SWITCH_CAMERA');  }$/;"	f
+cmdTURNLEFT	templates/index_new.html	/^function cmdTURNLEFT(){   doSend('TURNLEFT');  }$/;"	f
+cmdTURNRIGHT	templates/index_new.html	/^function cmdTURNRIGHT(){   doSend('TURNRIGHT');  }$/;"	f
+createBtn	templates/index_2.html	/^function createBtn()$/;"	f
+createBtn	templates/proba.html	/^function createBtn()$/;"	f
+disableAll	templates/index_2.html	/^function disableAll()$/;"	f
+disableAll	templates/index_new.html	/^function disableAll()$/;"	f
+disableAll	templates/proba.html	/^function disableAll()$/;"	f
+doChat	templates/index_2.html	/^ function doChat() {$/;"	f
+doChat	templates/index_new.html	/^ function doChat() {$/;"	f
+doChat	templates/proba.html	/^ function doChat() {$/;"	f
+doConnect	templates/index.html	/^  function doConnect()$/;"	f
+doConnect	templates/index_2.html	/^  function doConnect()$/;"	f
+doConnect	templates/index_new.html	/^  function doConnect()$/;"	f
+doConnect	templates/proba.html	/^  function doConnect()$/;"	f
+doDisconnect	templates/index.html	/^   function doDisconnect() {$/;"	f
+doDisconnect	templates/index_2.html	/^   function doDisconnect() {$/;"	f
+doDisconnect	templates/index_new.html	/^   function doDisconnect() {$/;"	f
+doDisconnect	templates/proba.html	/^   function doDisconnect() {$/;"	f
+doSend	templates/index.html	/^  function doSend(message)$/;"	f
+doSend	templates/index_2.html	/^  function doSend(message)$/;"	f
+doSend	templates/index_new.html	/^  function doSend(message)$/;"	f
+doSend	templates/proba.html	/^  function doSend(message)$/;"	f
+do_GET	httpServer.py	/^	def do_GET(self):$/;"	m	class:myHandler
+do_POST	httpServer.py	/^	def do_POST(self):$/;"	m	class:myHandler
+enableAll	templates/index_2.html	/^function enableAll()$/;"	f
+enableAll	templates/index_new.html	/^function enableAll()$/;"	f
+enableAll	templates/proba.html	/^function enableAll()$/;"	f
+error	webSocketServer.py	/^error='error'$/;"	v
+execCommand	webSocketServer.py	/^    def execCommand(self,cmd='none'):$/;"	m	class:SimpleEcho
+gen	videoserver.py	/^def gen(camera):$/;"	f
+getCommand	webSocketServer.py	/^    def getCommand(self,data):$/;"	m	class:SimpleEcho
+get_frame	camera.py	/^    def get_frame(self):$/;"	m	class:VideoCamera
+handleClose	webSocketServer.py	/^    def handleClose(self):$/;"	m	class:SimpleEcho
+handleConnected	webSocketServer.py	/^    def handleConnected(self):$/;"	m	class:SimpleEcho
+handleMessage	webSocketServer.py	/^    def handleMessage(self):$/;"	m	class:SimpleEcho
+index	videoserver.py	/^def index():$/;"	f
+init	templates/index.html	/^  function init()$/;"	f
+init	templates/index_2.html	/^  function init()$/;"	f
+init	templates/index_new.html	/^  function init()$/;"	f
+init	templates/proba.html	/^  function init()$/;"	f
+init	webSocketServer.py	/^    def init(self,robot_IP='127.0.0.1',robot_PORT=9559):$/;"	m	class:SimpleEcho
+main	webSocketServer.py	/^def main(IP='127.0.0.1', PORT=8000):$/;"	f
+myHandler	httpServer.py	/^class myHandler(BaseHTTPRequestHandler):$/;"	c
+onClose	templates/index.html	/^  function onClose(evt)$/;"	f
+onClose	templates/index_2.html	/^  function onClose(evt)$/;"	f
+onClose	templates/index_new.html	/^  function onClose(evt)$/;"	f
+onClose	templates/proba.html	/^  function onClose(evt)$/;"	f
+onError	templates/index.html	/^  function onError(evt)$/;"	f
+onError	templates/index_2.html	/^  function onError(evt)$/;"	f
+onError	templates/index_new.html	/^  function onError(evt)$/;"	f
+onError	templates/proba.html	/^  function onError(evt)$/;"	f
+onMessage	templates/index.html	/^  function onMessage(evt)$/;"	f
+onMessage	templates/index_2.html	/^  function onMessage(evt)$/;"	f
+onMessage	templates/index_new.html	/^  function onMessage(evt)$/;"	f
+onMessage	templates/proba.html	/^  function onMessage(evt)$/;"	f
+onOpen	templates/index.html	/^  function onOpen(evt)$/;"	f
+onOpen	templates/index_2.html	/^  function onOpen(evt)$/;"	f
+onOpen	templates/index_new.html	/^  function onOpen(evt)$/;"	f
+onOpen	templates/proba.html	/^  function onOpen(evt)$/;"	f
+openNav	templates/index_2.html	/^function openNav() {$/;"	f
+openNav	templates/index_new.html	/^function openNav() {$/;"	f
+opencmdNav	templates/index_new.html	/^function opencmdNav() {$/;"	f
+parser	webSocketServer.py	/^    parser = argparse.ArgumentParser()$/;"	v
+photo	webSocketServer.py	/^photo='photo'$/;"	v
+sendText	templates/index.html	/^   function sendText() {$/;"	f
+sendText	templates/index_2.html	/^   function sendText() {$/;"	f
+sendText	templates/index_new.html	/^   function sendText() {$/;"	f
+sendText	templates/proba.html	/^   function sendText() {$/;"	f
+slide	templates/index.html	/^  function slide(){$/;"	f
+slide	templates/index_2.html	/^  function slide(){$/;"	f
+slide	templates/index_new.html	/^  function slide(){$/;"	f
+slide	templates/proba.html	/^  function slide(){$/;"	f
+video_feed	videoserver.py	/^def video_feed():$/;"	f
+writeToScreen	templates/index.html	/^  function writeToScreen(message)$/;"	f
+writeToScreen	templates/index_2.html	/^  function writeToScreen(message)$/;"	f
+writeToScreen	templates/index_new.html	/^  function writeToScreen(message)$/;"	f
+writeToScreen	templates/proba.html	/^  function writeToScreen(message)$/;"	f

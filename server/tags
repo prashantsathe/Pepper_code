@@ -1,0 +1,388 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALDialog	localize_speech.py	/^ALDialog = None$/;"	v
+AL_k16VGA	capture_image.py	/^AL_k16VGA   = 4 	#Image of 2560*1920px$/;"	v
+AL_k16VGA	localize_speech.py	/^AL_k16VGA   = 4 	#Image of 2560*1920px$/;"	v
+AL_k4VGA	capture_image.py	/^AL_k4VGA    = 3 	#Image of 1280*960px$/;"	v
+AL_k4VGA	localize_speech.py	/^AL_k4VGA    = 3 	#Image of 1280*960px$/;"	v
+AL_kBGRColorSpace	capture_image.py	/^AL_kBGRColorSpace = 13$/;"	v
+AL_kBGRColorSpace	localize_speech.py	/^AL_kBGRColorSpace = 13$/;"	v
+AL_kBottomCamera	capture_image.py	/^AL_kBottomCamera = 1$/;"	v
+AL_kBottomCamera	localize_speech.py	/^AL_kBottomCamera = 1$/;"	v
+AL_kDepthCamera	capture_image.py	/^AL_kDepthCamera = 2$/;"	v
+AL_kDepthCamera	localize_speech.py	/^AL_kDepthCamera = 2$/;"	v
+AL_kQQQQVGA	capture_image.py	/^AL_kQQQQVGA = 8 	#Image of 40*30px$/;"	v
+AL_kQQQQVGA	localize_speech.py	/^AL_kQQQQVGA = 8 	#Image of 40*30px$/;"	v
+AL_kQQQVGA	capture_image.py	/^AL_kQQQVGA  = 7 	#Image of 80*60px$/;"	v
+AL_kQQQVGA	localize_speech.py	/^AL_kQQQVGA  = 7 	#Image of 80*60px$/;"	v
+AL_kQQVGA	capture_image.py	/^AL_kQQVGA   = 0 	#Image of 160*120px$/;"	v
+AL_kQQVGA	localize_speech.py	/^AL_kQQVGA   = 0 	#Image of 160*120px$/;"	v
+AL_kQVGA	capture_image.py	/^AL_kQVGA    = 1 	#Image of 320*240px$/;"	v
+AL_kQVGA	localize_speech.py	/^AL_kQVGA    = 1 	#Image of 320*240px$/;"	v
+AL_kTopCamera	capture_image.py	/^AL_kTopCamera = 0$/;"	v
+AL_kTopCamera	localize_speech.py	/^AL_kTopCamera = 0$/;"	v
+AL_kVGA	capture_image.py	/^AL_kVGA     = 2 	#Image of 640*480px$/;"	v
+AL_kVGA	localize_speech.py	/^AL_kVGA     = 2 	#Image of 640*480px$/;"	v
+ALpepper_navigation	localize_speech.py	/^ALpepper_navigation = False$/;"	v
+COMMAND_BACK	Video_capturing/webSocketServer.py	/^COMMAND_BACK = 'BACK'$/;"	v
+COMMAND_DISCONNECT	Video_capturing/webSocketServer.py	/^COMMAND_DISCONNECT = 'DISCONNECT'$/;"	v
+COMMAND_FORWARD	Video_capturing/webSocketServer.py	/^COMMAND_FORWARD = 'FORWARD'$/;"	v
+COMMAND_HEADPITCH	Video_capturing/webSocketServer.py	/^COMMAND_HEADPITCH = 'HEADPITCH' # ???$/;"	v
+COMMAND_HEADYAW	Video_capturing/webSocketServer.py	/^COMMAND_HEADYAW = 'HEADYAW' 	# ???$/;"	v
+COMMAND_LEFT	Video_capturing/webSocketServer.py	/^COMMAND_LEFT = 'LEFT'$/;"	v
+COMMAND_REST	Video_capturing/webSocketServer.py	/^COMMAND_REST = 'REST'$/;"	v
+COMMAND_RIGHT	Video_capturing/webSocketServer.py	/^COMMAND_RIGHT = 'RIGHT'$/;"	v
+COMMAND_SAY	Video_capturing/webSocketServer.py	/^COMMAND_SAY = 'SAY'$/;"	v
+COMMAND_SENSOR	Video_capturing/webSocketServer.py	/^COMMAND_SENSOR = 'SENSOR'$/;"	v
+COMMAND_SIT	Video_capturing/webSocketServer.py	/^COMMAND_SIT='SIT'$/;"	v
+COMMAND_STOP	Video_capturing/webSocketServer.py	/^COMMAND_STOP = 'STOP'$/;"	v
+COMMAND_TURNLEFT	Video_capturing/webSocketServer.py	/^COMMAND_TURNLEFT = 'TURNLEFT'$/;"	v
+COMMAND_TURNRIGHT	Video_capturing/webSocketServer.py	/^COMMAND_TURNRIGHT = 'TURNRIGHT'$/;"	v
+COMMAND_WAKEUP	Video_capturing/webSocketServer.py	/^COMMAND_WAKEUP = 'WAKEUP'$/;"	v
+Connect	Video_capturing/templates/index_new.html	/^function Connect()$/;"	f
+IP	pepper.py	/^IP = "10.9.45.11"$/;"	v
+PORT	pepper.py	/^PORT = 9559$/;"	v
+PORT_NUMBER	Video_capturing/httpServer.py	/^PORT_NUMBER = 800$/;"	v
+SimpleEcho	Video_capturing/webSocketServer.py	/^class SimpleEcho(WebSocket):$/;"	c
+VideoCamera	Video_capturing/camera.py	/^class VideoCamera(object):$/;"	c
+WebServerThread	Video_capturing/httpServer.py	/^def WebServerThread():$/;"	f
+__author__	Video_capturing/httpServer.py	/^	__author__ = 'Leo Fabiano'$/;"	v
+__author__	Video_capturing/webSocketServer.py	/^__author__ = 'Leo Fabiano'$/;"	v
+__del__	Video_capturing/camera.py	/^    def __del__(self):$/;"	m	class:VideoCamera	file:
+__init__	Video_capturing/camera.py	/^    def __init__(self):$/;"	m	class:VideoCamera
+aWantedResolution	live_streaming_example.py	/^        aWantedResolution = (1280, 960);    $/;"	v
+aWantedResolution	live_streaming_example.py	/^        aWantedResolution = (160, 120);$/;"	v
+aWantedResolution	live_streaming_example.py	/^        aWantedResolution = (320, 240);$/;"	v
+aWantedResolution	live_streaming_example.py	/^        aWantedResolution = (640, 480);$/;"	v
+alPath	live_streaming_example.py	/^  alPath = alPath.replace("'", "")$/;"	v
+alPath	live_streaming_example.py	/^  alPath = alPath.replace("~", home)$/;"	v
+alPath	live_streaming_example.py	/^  alPath = strPath + os.sep + "lib" + os.sep$/;"	v
+anVFlipCamera	live_streaming_example.py	/^    anVFlipCamera = [0, 0]; # stereo settings (was [0,1])$/;"	v
+anVFlipCamera	live_streaming_example.py	/^anVFlipCamera = [0, 0]; # normal settings$/;"	v
+app	Video_capturing/videoserver.py	/^app = Flask(__name__)$/;"	v
+args	Video_capturing/webSocketServer.py	/^    args = parser.parse_args()$/;"	v
+args	alnavigation.py	/^    	args = parser.parse_args()$/;"	v
+args	arabic_speech.py	/^    args = parser.parse_args()$/;"	v
+args	capture_image.py	/^    args = parser.parse_args()$/;"	v
+args	localize_speech.py	/^    args = parser.parse_args()$/;"	v
+args	show_map.py	/^    args = parser.parse_args()$/;"	v
+avd	live_streaming_example.py	/^avd = ALProxy( "ALVideoDevice",  strNaoIp, 9559 );$/;"	v
+avgX	live_streaming_example.py	/^                avgX = (x2+x1+1)\/2; # round it!$/;"	v
+bChangeCamera	live_streaming_example.py	/^                bChangeCamera = False;$/;"	v
+bChangeCamera	live_streaming_example.py	/^    bChangeCamera = ( nKey == ord( 'c' ) );$/;"	v
+bChangeCamera	live_streaming_example.py	/^bChangeCamera = False;$/;"	v
+bDrawInfo	live_streaming_example.py	/^bDrawInfo = 0;$/;"	v
+bDrawInfo	live_streaming_example.py	/^bDrawInfo = True;$/;"	v
+bEyesFlipFlop	live_streaming_example.py	/^        bEyesFlipFlop = not bEyesFlipFlop;$/;"	v
+bEyesFlipFlop	live_streaming_example.py	/^    bEyesFlipFlop = True;$/;"	v
+bKeyPressed	live_streaming_example.py	/^    bKeyPressed = ( nKey == ord( 'q' ) or nKey == ord( 'Q' ) );$/;"	v
+bKeyPressed	live_streaming_example.py	/^bKeyPressed = False;$/;"	v
+bMoveEyes	live_streaming_example.py	/^bMoveEyes = False;$/;"	v
+bOutputTimeStampToFilename	live_streaming_example.py	/^        bOutputTimeStampToFilename = True;$/;"	v
+bOutputTimeStampToFilename	live_streaming_example.py	/^bOutputTimeStampToFilename = False;$/;"	v
+bRecordMode	live_streaming_example.py	/^        bRecordMode = not bRecordMode;$/;"	v
+bRecordMode	live_streaming_example.py	/^bRecordMode = False;$/;"	v
+bSaveFrame	live_streaming_example.py	/^                        bSaveFrame = True;$/;"	v
+bSaveFrame	live_streaming_example.py	/^                bSaveFrame = False;$/;"	v
+bSaveFrame	live_streaming_example.py	/^            bSaveFrame = bSaveFrame or mem.getData( "Device\/SubDeviceList\/Head\/Touch\/Front\/Sensor\/Value" ) > 0.5;                    $/;"	v
+bSaveFrame	live_streaming_example.py	/^        bSaveFrame = True;$/;"	v
+bSaveFrame	live_streaming_example.py	/^    bSaveFrame = ( nKey == ord( 's' ) );$/;"	v
+bSaveFrame	live_streaming_example.py	/^bSaveFrame = False;$/;"	v
+bSaveStereoFrame	live_streaming_example.py	/^                        bSaveStereoFrame = False;$/;"	v
+bSaveStereoFrame	live_streaming_example.py	/^    bSaveStereoFrame = ( nKey == ord( 'S' ) );$/;"	v
+bSaveStereoFrame	live_streaming_example.py	/^bSaveStereoFrame = False;$/;"	v
+bStereoMode	live_streaming_example.py	/^bStereoMode = False;$/;"	v
+bTestFrame	live_streaming_example.py	/^                bTestFrame = False;$/;"	v
+bTestFrame	live_streaming_example.py	/^    bTestFrame = ( nKey == ord( 't' ) );$/;"	v
+bTestFrame	live_streaming_example.py	/^bTestFrame = False;$/;"	v
+bToggleRecordMode	live_streaming_example.py	/^    bToggleRecordMode = ( nKey == ord( 'r' ) );    $/;"	v
+bUseMultiStreamModule	live_streaming_example.py	/^    bUseMultiStreamModule = False;$/;"	v
+bUseMultiStreamModule	live_streaming_example.py	/^bUseMultiStreamModule = False;$/;"	v
+bUseMultiStreamModule	live_streaming_example.py	/^bUseMultiStreamModule = True;$/;"	v
+blink	Video_capturing/httpServer.py	/^blink = True$/;"	v
+bufferImageToDraw	live_streaming_example.py	/^bufferImageToDraw = cv.CreateImage( (nSizeX, nSizeY), cv.IPL_DEPTH_8U, nNbrColorPlanes );$/;"	v
+bufferImageToDraw2	live_streaming_example.py	/^    bufferImageToDraw2 = cv.CreateImage( (nSizeX, nSizeY), cv.IPL_DEPTH_8U, nNbrColorPlanes );$/;"	v
+camera	Video_capturing/webSocketServer.py	/^camera='camera'$/;"	v
+capture_image	localize_speech.py	/^def capture_image(threadName, captureDevice):$/;"	f
+clearText	Video_capturing/templates/index.html	/^  function clearText() {$/;"	f
+clearText	Video_capturing/templates/index_2.html	/^  function clearText() {$/;"	f
+clearText	Video_capturing/templates/index_new.html	/^  function clearText() {$/;"	f
+clearText	Video_capturing/templates/proba.html	/^  function clearText() {$/;"	f
+closeNav	Video_capturing/templates/index_2.html	/^function closeNav() {$/;"	f
+closeNav	Video_capturing/templates/index_new.html	/^function closeNav() {$/;"	f
+closecmdNav	Video_capturing/templates/index_new.html	/^function closecmdNav() {$/;"	f
+cmdARMREST	Video_capturing/templates/index_new.html	/^ function cmdARMREST(){   doSend('ARMREST');  }$/;"	f
+cmdBACK	Video_capturing/templates/index_new.html	/^function cmdBACK(){   doSend('BACK');  }$/;"	f
+cmdDISCONNECT	Video_capturing/templates/index_new.html	/^function cmdDISCONNECT(){   doSend('DISCONNECT');  }$/;"	f
+cmdFORWARD	Video_capturing/templates/index_new.html	/^function cmdFORWARD(){   doSend('FORWARD');  }$/;"	f
+cmdHEADPITCH	Video_capturing/templates/index_new.html	/^function cmdHEADPITCH(){   doSend('HEADPITCH');  }$/;"	f
+cmdHEADYAW	Video_capturing/templates/index_new.html	/^function cmdHEADYAW(){   doSend('HEADYAW');  }$/;"	f
+cmdLARMCLOSE	Video_capturing/templates/index_new.html	/^function cmdLARMCLOSE(){   doSend('LARMCLOSE');  }$/;"	f
+cmdLARMDOWN	Video_capturing/templates/index_new.html	/^function cmdLARMDOWN(){   doSend('LARMDOWN');  }$/;"	f
+cmdLARMOPEN	Video_capturing/templates/index_new.html	/^function cmdLARMOPEN(){   doSend('LARMOPEN');  }$/;"	f
+cmdLARMUP	Video_capturing/templates/index_new.html	/^function cmdLARMUP(){   doSend('LARMUP');  }$/;"	f
+cmdLEFT	Video_capturing/templates/index_new.html	/^function cmdLEFT(){   doSend('LEFT');  }$/;"	f
+cmdMUSIC_DOWN	Video_capturing/templates/index_new.html	/^function cmdMUSIC_DOWN(){   doSend('MUSIC_DOWN');  }$/;"	f
+cmdMUSIC_FORWARD	Video_capturing/templates/index_new.html	/^function cmdMUSIC_FORWARD(){   doSend('MUSIC_FORWARD');  }$/;"	f
+cmdMUSIC_NEXT	Video_capturing/templates/index_new.html	/^function cmdMUSIC_NEXT(){   doSend('MUSIC_NEXT');  }$/;"	f
+cmdMUSIC_OFF	Video_capturing/templates/index_new.html	/^function cmdMUSIC_OFF(){   doSend('MUSIC_OFF');  }$/;"	f
+cmdMUSIC_ON	Video_capturing/templates/index_new.html	/^function cmdMUSIC_ON(){   doSend('MUSIC_ON');  }$/;"	f
+cmdMUSIC_PAUSE	Video_capturing/templates/index_new.html	/^function cmdMUSIC_PAUSE(){   doSend('MUSIC_PAUSE');  }$/;"	f
+cmdMUSIC_PLAY	Video_capturing/templates/index_new.html	/^function cmdMUSIC_PLAY(){   doSend('MUSIC_PLAY');  }$/;"	f
+cmdMUSIC_PREVIOUS	Video_capturing/templates/index_new.html	/^function cmdMUSIC_PREVIOUS(){   doSend('MUSIC_PREVIOUS');  }$/;"	f
+cmdMUSIC_REWIND	Video_capturing/templates/index_new.html	/^function cmdMUSIC_REWIND(){   doSend('MUSIC_REWIND');  }$/;"	f
+cmdMUSIC_UP	Video_capturing/templates/index_new.html	/^function cmdMUSIC_UP(){   doSend('MUSIC_UP');  }$/;"	f
+cmdMUSIC_URL	Video_capturing/templates/index_new.html	/^function cmdMUSIC_URL(){   doSend('MUSIC_URL');  }$/;"	f
+cmdOBSTACLE	Video_capturing/templates/index_new.html	/^function cmdOBSTACLE(){   doSend('OBSTACLE');  }$/;"	f
+cmdPOSTURE_CROUCH	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_CROUCH(){   doSend('POSTURE_CROUCH');  }$/;"	f
+cmdPOSTURE_CUSTOMER	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_CUSTOMER(){   doSend('POSTURE_CUSTOMER');  }$/;"	f
+cmdPOSTURE_DELETE	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_DELETE(){   doSend('POSTURE_DELETE');  }$/;"	f
+cmdPOSTURE_LYINGBACK	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_LYINGBACK(){   doSend('POSTURE_LYINGBACK');  }$/;"	f
+cmdPOSTURE_LYINGBELLY	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_LYINGBELLY(){   doSend('POSTURE_LYINGBELLY');  }$/;"	f
+cmdPOSTURE_RECORD	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_RECORD(){   doSend('POSTURE_RECORD');  }$/;"	f
+cmdPOSTURE_RECORD_STOP	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_RECORD_STOP(){   doSend('POSTURE_RECORD_STOP');  }$/;"	f
+cmdPOSTURE_SIT	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_SIT(){   doSend('POSTURE_SIT');  }$/;"	f
+cmdPOSTURE_SITRELAX	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_SITRELAX(){   doSend('POSTURE_SITRELAX');  }$/;"	f
+cmdPOSTURE_STADN	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_STADN(){   doSend('POSTURE_STADN');  }$/;"	f
+cmdPOSTURE_STADNINIT	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_STADNINIT(){   doSend('POSTURE_STADNINIT');  }$/;"	f
+cmdPOSTURE_STADNZERO	Video_capturing/templates/index_new.html	/^function cmdPOSTURE_STADNZERO(){   doSend('POSTURE_STADNZERO');  }$/;"	f
+cmdRARMCLOSE	Video_capturing/templates/index_new.html	/^function cmdRARMCLOSE(){   doSend('RARMCLOSE');  }$/;"	f
+cmdRARMDOWN	Video_capturing/templates/index_new.html	/^function cmdRARMDOWN(){   doSend('RARMDOWN');  }$/;"	f
+cmdRARMOPEN	Video_capturing/templates/index_new.html	/^function cmdRARMOPEN(){   doSend('RARMOPEN');  }$/;"	f
+cmdRARMUP	Video_capturing/templates/index_new.html	/^function cmdRARMUP(){   doSend('RARMUP');  }$/;"	f
+cmdREST	Video_capturing/templates/index_new.html	/^function cmdREST(){   doSend('REST');  }$/;"	f
+cmdRIGHT	Video_capturing/templates/index_new.html	/^function cmdRIGHT(){   doSend('RIGHT');  }$/;"	f
+cmdSAY	Video_capturing/templates/index_new.html	/^function cmdSAY(){   doSend('SAY');  }$/;"	f
+cmdSENSOR	Video_capturing/templates/index_new.html	/^function cmdSENSOR(){   doSend('SENSOR');  }$/;"	f
+cmdSTOP	Video_capturing/templates/index_new.html	/^function cmdSTOP(){   doSend('STOP');  }$/;"	f
+cmdSWITCH_CAMERA	Video_capturing/templates/index_new.html	/^function cmdSWITCH_CAMERA(){   doSend('SWITCH_CAMERA');  }$/;"	f
+cmdTURNLEFT	Video_capturing/templates/index_new.html	/^function cmdTURNLEFT(){   doSend('TURNLEFT');  }$/;"	f
+cmdTURNRIGHT	Video_capturing/templates/index_new.html	/^function cmdTURNRIGHT(){   doSend('TURNRIGHT');  }$/;"	f
+colorText	live_streaming_example.py	/^                colorText = (255,0,0);$/;"	v
+convertRGB_ToBGR	live_streaming_example.py	/^def convertRGB_ToBGR( bufferImageToDraw, image, nSizeX, nSizeY ):$/;"	f
+convertYUV_ToBGR	live_streaming_example.py	/^def convertYUV_ToBGR( bufferImageToDraw, image, nSizeX, nSizeY ):$/;"	f
+convertYUV_ToBGR_cv2	live_streaming_example.py	/^def convertYUV_ToBGR_cv2( image, nSizeX, nSizeY ):$/;"	f
+createBtn	Video_capturing/templates/index_2.html	/^function createBtn()$/;"	f
+createBtn	Video_capturing/templates/proba.html	/^function createBtn()$/;"	f
+dataImage	live_streaming_example.py	/^            dataImage = avd.getImageRemote( strMyClientName );$/;"	v
+dataImage	live_streaming_example.py	/^            dataImage = avd.getImagesRemote( strMyClientName );$/;"	v
+disableAll	Video_capturing/templates/index_2.html	/^function disableAll()$/;"	f
+disableAll	Video_capturing/templates/index_new.html	/^function disableAll()$/;"	f
+disableAll	Video_capturing/templates/proba.html	/^function disableAll()$/;"	f
+doChat	Video_capturing/templates/index_2.html	/^ function doChat() {$/;"	f
+doChat	Video_capturing/templates/index_new.html	/^ function doChat() {$/;"	f
+doChat	Video_capturing/templates/proba.html	/^ function doChat() {$/;"	f
+doConnect	Video_capturing/templates/index.html	/^  function doConnect()$/;"	f
+doConnect	Video_capturing/templates/index_2.html	/^  function doConnect()$/;"	f
+doConnect	Video_capturing/templates/index_new.html	/^  function doConnect()$/;"	f
+doConnect	Video_capturing/templates/proba.html	/^  function doConnect()$/;"	f
+doDisconnect	Video_capturing/templates/index.html	/^   function doDisconnect() {$/;"	f
+doDisconnect	Video_capturing/templates/index_2.html	/^   function doDisconnect() {$/;"	f
+doDisconnect	Video_capturing/templates/index_new.html	/^   function doDisconnect() {$/;"	f
+doDisconnect	Video_capturing/templates/proba.html	/^   function doDisconnect() {$/;"	f
+doSend	Video_capturing/templates/index.html	/^  function doSend(message)$/;"	f
+doSend	Video_capturing/templates/index_2.html	/^  function doSend(message)$/;"	f
+doSend	Video_capturing/templates/index_new.html	/^  function doSend(message)$/;"	f
+doSend	Video_capturing/templates/proba.html	/^  function doSend(message)$/;"	f
+do_GET	Video_capturing/httpServer.py	/^	def do_GET(self):$/;"	m	class:myHandler
+do_POST	Video_capturing/httpServer.py	/^	def do_POST(self):$/;"	m	class:myHandler
+dx	live_streaming_example.py	/^                dx = x2-x1;$/;"	v
+dy	live_streaming_example.py	/^                dy = y2-y1;            $/;"	v
+enableAll	Video_capturing/templates/index_2.html	/^function enableAll()$/;"	f
+enableAll	Video_capturing/templates/index_new.html	/^function enableAll()$/;"	f
+enableAll	Video_capturing/templates/proba.html	/^function enableAll()$/;"	f
+equalizeColorImage	live_streaming_example.py	/^def equalizeColorImage( imageBuffer, bEqualiseEachChannelIndependantly = False ):$/;"	f
+error	Video_capturing/webSocketServer.py	/^error='error'$/;"	v
+execCommand	Video_capturing/webSocketServer.py	/^    def execCommand(self,cmd='none'):$/;"	m	class:SimpleEcho
+findRedAndBlueMarks	live_streaming_example.py	/^def findRedAndBlueMarks( imageBuffer, imageBufferForDrawingDebug = None, _nDetectionMethod = 0 ):$/;"	f
+font	live_streaming_example.py	/^    font = cv.InitFont( cv.CV_FONT_HERSHEY_SIMPLEX, 0.5, 0.5, 0, nThickness, 8 );   $/;"	v
+gen	Video_capturing/videoserver.py	/^def gen(camera):$/;"	f
+getCommand	Video_capturing/webSocketServer.py	/^    def getCommand(self,data):$/;"	m	class:SimpleEcho
+getFileContents	live_streaming_example.py	/^def getFileContents( szFilename, bQuiet = False ):$/;"	f
+getHotPoint	live_streaming_example.py	/^def getHotPoint( imageBuffer, bAsBinary = False ):$/;"	f
+getNaoqiPath	live_streaming_example.py	/^def getNaoqiPath():$/;"	f
+get_frame	Video_capturing/camera.py	/^    def get_frame(self):$/;"	m	class:VideoCamera
+handleClose	Video_capturing/webSocketServer.py	/^    def handleClose(self):$/;"	m	class:SimpleEcho
+handleConnected	Video_capturing/webSocketServer.py	/^    def handleConnected(self):$/;"	m	class:SimpleEcho
+handleMessage	Video_capturing/webSocketServer.py	/^    def handleMessage(self):$/;"	m	class:SimpleEcho
+help	alnavigation.py	/^    	                    help="Naoqi port number")$/;"	v
+help	alnavigation.py	/^    	                    help="Robot IP address. On robot or Local Naoqi: use '127.0.0.1'.")$/;"	v
+help	arabic_speech.py	/^                        help="Naoqi port number")$/;"	v
+help	arabic_speech.py	/^                        help="Robot IP address. On robot or Local Naoqi: use '127.0.0.1'.")$/;"	v
+help	arabic_speech.py	/^                        help="absolute path of the dialog topic file (on the robot)")$/;"	v
+help	capture_image.py	/^                        help="Naoqi port number")$/;"	v
+help	capture_image.py	/^                        help="Robot IP address. On robot or Local Naoqi: use '127.0.0.1'.")$/;"	v
+help	capture_image.py	/^                        help="absolute path of the dialog topic file (on the robot)")$/;"	v
+help	localize_speech.py	/^                        help="Naoqi port number")$/;"	v
+help	localize_speech.py	/^                        help="Robot IP address. On robot or Local Naoqi: use '127.0.0.1'.")$/;"	v
+help	localize_speech.py	/^                        help="absolute path of the dialog topic file (on the robot)")$/;"	v
+help	show_map.py	/^                        help="Naoqi port number")$/;"	v
+help	show_map.py	/^                        help="Robot IP address. On robot or Local Naoqi: use '127.0.0.1'.")$/;"	v
+home	live_streaming_example.py	/^home = `os.environ.get("HOME")`$/;"	v
+host	pepper.py	/^host = socket.gethostname()$/;"	v
+image	live_streaming_example.py	/^                        image = None;$/;"	v
+image	live_streaming_example.py	/^                        image = dataImage[0][6];$/;"	v
+image	live_streaming_example.py	/^                    image = dataImage[2][nSizeX*nSizeY*3:];$/;"	v
+image	live_streaming_example.py	/^                image = dataImage[6];$/;"	v
+image2	live_streaming_example.py	/^                        image2 = None;$/;"	v
+image2	live_streaming_example.py	/^                        image2 = dataImage[1][6];$/;"	v
+image2	live_streaming_example.py	/^                    image2 = dataImage[2];$/;"	v
+index	Video_capturing/videoserver.py	/^def index():$/;"	f
+init	Video_capturing/templates/index.html	/^  function init()$/;"	f
+init	Video_capturing/templates/index_2.html	/^  function init()$/;"	f
+init	Video_capturing/templates/index_new.html	/^  function init()$/;"	f
+init	Video_capturing/templates/proba.html	/^  function init()$/;"	f
+init	Video_capturing/webSocketServer.py	/^    def init(self,robot_IP='127.0.0.1',robot_PORT=9559):$/;"	m	class:SimpleEcho
+isOnNao	live_streaming_example.py	/^def isOnNao():$/;"	f
+k4VGA	live_streaming_example.py	/^k4VGA = 3; # work only on a NAO V4$/;"	v
+kBGR	live_streaming_example.py	/^kBGR = 13;$/;"	v
+kBottomCamera	live_streaming_example.py	/^kBottomCamera = 1;$/;"	v
+kCameraAutoExpositionID	live_streaming_example.py	/^kCameraAutoExpositionID = 11;$/;"	v
+kCameraAutoWhiteBalanceID	live_streaming_example.py	/^kCameraAutoWhiteBalanceID = 12;$/;"	v
+kCameraExposureID	live_streaming_example.py	/^kCameraExposureID = 17;$/;"	v
+kCameraGainID	live_streaming_example.py	/^kCameraGainID = 6;$/;"	v
+kFlipV	live_streaming_example.py	/^kFlipV = 8;$/;"	v
+kGrey	live_streaming_example.py	/^kGrey = 0;$/;"	v
+kQQVGA	live_streaming_example.py	/^kQQVGA = 0;$/;"	v
+kQVGA	live_streaming_example.py	/^kQVGA = 1;$/;"	v
+kRGB	live_streaming_example.py	/^kRGB = 11;$/;"	v
+kSelectCamera	live_streaming_example.py	/^kSelectCamera = 18;$/;"	v
+kTopCamera	live_streaming_example.py	/^kTopCamera = 0;$/;"	v
+kVGA	live_streaming_example.py	/^kVGA = 2;$/;"	v
+kYUV422	live_streaming_example.py	/^kYUV422 = 9;$/;"	v
+led	live_streaming_example.py	/^    led = ALProxy( "ALLeds",  strNaoIp, 9559 );$/;"	v
+limitRange	live_streaming_example.py	/^def limitRange( rVal, rMin, rMax ):$/;"	f
+main	Video_capturing/webSocketServer.py	/^def main(IP='127.0.0.1', PORT=8000):$/;"	f
+main	alnavigation.py	/^def main(session):$/;"	f
+main	arabic_speech.py	/^def main(session, topic_path):$/;"	f
+main	capture_image.py	/^def main(session, exploration_file, topic_path):$/;"	f
+main	localize_speech.py	/^def main(session, exploration_file, topic_path):$/;"	f
+main	pepper.py	/^def main():$/;"	f
+main	show_map.py	/^def main(session, exploration_file):$/;"	f
+mem	live_streaming_example.py	/^mem = ALProxy( "ALMemory",  strNaoIp, 9559 );$/;"	v
+motion_service	localize_speech.py	/^motion_service = None$/;"	v
+myHandler	Video_capturing/httpServer.py	/^class myHandler(BaseHTTPRequestHandler):$/;"	c
+nCameraToUse	live_streaming_example.py	/^nCameraToUse = kTopCamera;$/;"	v
+nColorSpace	live_streaming_example.py	/^nColorSpace = kBGR;$/;"	v
+nColorSpace	live_streaming_example.py	/^nColorSpace = kYUV422;$/;"	v
+nCptFrame	live_streaming_example.py	/^                nCptFrame = 0;$/;"	v
+nCptFrame	live_streaming_example.py	/^nCptFrame = 0;$/;"	v
+nCptImageSaved	live_streaming_example.py	/^nCptImageSaved = 0;$/;"	v
+nFps	live_streaming_example.py	/^nFps = 30;$/;"	v
+nKey	live_streaming_example.py	/^    nKey =  cv.WaitKey(1) & 0xFF;$/;"	v
+nNbrColorPlanes	live_streaming_example.py	/^    nNbrColorPlanes = 1;$/;"	v
+nNbrColorPlanes	live_streaming_example.py	/^nNbrColorPlanes = 3;$/;"	v
+nSaveStereoFramePass	live_streaming_example.py	/^                        nSaveStereoFramePass = 0;$/;"	v
+nSaveStereoFramePass	live_streaming_example.py	/^                        nSaveStereoFramePass = 1;$/;"	v
+nSaveStereoFramePass	live_streaming_example.py	/^nSaveStereoFramePass = 0;$/;"	v
+nShowProcessed	live_streaming_example.py	/^        nShowProcessed = ( nShowProcessed + 1 ) % 4 ;$/;"	v
+nShowProcessed	live_streaming_example.py	/^nShowProcessed = 0; # 0: show source, other value: show steps$/;"	v
+nSide	live_streaming_example.py	/^            nSide = +0.1;$/;"	v
+nSide	live_streaming_example.py	/^            nSide = -0.1;$/;"	v
+nSizeX	live_streaming_example.py	/^                    nSizeX = dataImage[0][0]; # read only properties of image 1$/;"	v
+nSizeX	live_streaming_example.py	/^                nSizeX = dataImage[0];$/;"	v
+nSizeY	live_streaming_example.py	/^                    nSizeY = dataImage[0][1];$/;"	v
+nSizeY	live_streaming_example.py	/^                nSizeY = dataImage[1];$/;"	v
+nThickness	live_streaming_example.py	/^    nThickness = 1;$/;"	v
+nUsedResolution	live_streaming_example.py	/^    nUsedResolution = avd.getGVMResolution( strMyClientName );$/;"	v
+nWantedResolution	live_streaming_example.py	/^        nWantedResolution = kVGA;$/;"	v
+nWantedResolution	live_streaming_example.py	/^nWantedResolution = kVGA;$/;"	v
+navigate	localize_speech.py	/^def navigate(captureDevice, x, y, z):$/;"	f
+navigation_service	localize_speech.py	/^navigation_service = None$/;"	v
+onClose	Video_capturing/templates/index.html	/^  function onClose(evt)$/;"	f
+onClose	Video_capturing/templates/index_2.html	/^  function onClose(evt)$/;"	f
+onClose	Video_capturing/templates/index_new.html	/^  function onClose(evt)$/;"	f
+onClose	Video_capturing/templates/proba.html	/^  function onClose(evt)$/;"	f
+onError	Video_capturing/templates/index.html	/^  function onError(evt)$/;"	f
+onError	Video_capturing/templates/index_2.html	/^  function onError(evt)$/;"	f
+onError	Video_capturing/templates/index_new.html	/^  function onError(evt)$/;"	f
+onError	Video_capturing/templates/proba.html	/^  function onError(evt)$/;"	f
+onMessage	Video_capturing/templates/index.html	/^  function onMessage(evt)$/;"	f
+onMessage	Video_capturing/templates/index_2.html	/^  function onMessage(evt)$/;"	f
+onMessage	Video_capturing/templates/index_new.html	/^  function onMessage(evt)$/;"	f
+onMessage	Video_capturing/templates/proba.html	/^  function onMessage(evt)$/;"	f
+onOpen	Video_capturing/templates/index.html	/^  function onOpen(evt)$/;"	f
+onOpen	Video_capturing/templates/index_2.html	/^  function onOpen(evt)$/;"	f
+onOpen	Video_capturing/templates/index_new.html	/^  function onOpen(evt)$/;"	f
+onOpen	Video_capturing/templates/proba.html	/^  function onOpen(evt)$/;"	f
+openNav	Video_capturing/templates/index_2.html	/^function openNav() {$/;"	f
+openNav	Video_capturing/templates/index_new.html	/^function openNav() {$/;"	f
+opencmdNav	Video_capturing/templates/index_new.html	/^function opencmdNav() {$/;"	f
+parser	Video_capturing/webSocketServer.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	alnavigation.py	/^    	parser = argparse.ArgumentParser()$/;"	v
+parser	arabic_speech.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	capture_image.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	localize_speech.py	/^    parser = argparse.ArgumentParser()$/;"	v
+parser	show_map.py	/^    parser = argparse.ArgumentParser()$/;"	v
+photo	Video_capturing/webSocketServer.py	/^photo='photo'$/;"	v
+port	pepper.py	/^port = 9999$/;"	v
+rDistToObject	live_streaming_example.py	/^                rDistToObject = math.sqrt( dx*dx+dy*dy );$/;"	v
+rDuration	live_streaming_example.py	/^                rDuration = time.time() - timeBegin;$/;"	v
+rLastComputedFps	live_streaming_example.py	/^                rLastComputedFps = 10\/rDuration;$/;"	v
+rLastComputedFps	live_streaming_example.py	/^rLastComputedFps = 0;$/;"	v
+rTimeStamp	live_streaming_example.py	/^                        rTimeStamp = 0;$/;"	v
+rTimeStamp	live_streaming_example.py	/^                    rTimeStamp = dataImage[0][4] + dataImage[0][5]\/(1000000.);$/;"	v
+rTimeStamp	live_streaming_example.py	/^                rTimeStamp = dataImage[4] + dataImage[5]\/(1000000.);$/;"	v
+rTimeStamp2	live_streaming_example.py	/^                        rTimeStamp2 = 0;$/;"	v
+rTimeStamp2	live_streaming_example.py	/^                        rTimeStamp2 = dataImage[1][4] + dataImage[1][5]\/(1000000.);$/;"	v
+read_data_till_newline	pepper.py	/^def read_data_till_newline(connection):$/;"	f
+retVal	live_streaming_example.py	/^                retVal = avd.getParam( i );$/;"	v
+retVal	live_streaming_example.py	/^                retVal = findRedAndBlueMarks( bufferImageToDraw, work );$/;"	v
+rgb	live_streaming_example.py	/^                rgb = convertYUV_ToBGR_cv2( image, nSizeX, nSizeY );$/;"	v
+rgb2	live_streaming_example.py	/^                        rgb2 = convertYUV_ToBGR_cv2( image2, nSizeX, nSizeY );$/;"	v
+sendText	Video_capturing/templates/index.html	/^   function sendText() {$/;"	f
+sendText	Video_capturing/templates/index_2.html	/^   function sendText() {$/;"	f
+sendText	Video_capturing/templates/index_new.html	/^   function sendText() {$/;"	f
+sendText	Video_capturing/templates/proba.html	/^   function sendText() {$/;"	f
+session	alnavigation.py	/^    	session = qi.Session()$/;"	v
+session	arabic_speech.py	/^    session = qi.Session()$/;"	v
+session	capture_image.py	/^    session = qi.Session()$/;"	v
+session	localize_speech.py	/^    session = qi.Session()$/;"	v
+session	show_map.py	/^    session = qi.Session()$/;"	v
+setCameraParamForRedAndBlue	live_streaming_example.py	/^def setCameraParamForRedAndBlue( bSetOrUnset = True ):$/;"	f
+setParameterLoudly	live_streaming_example.py	/^def setParameterLoudly( nNumParam, value ):$/;"	f
+slide	Video_capturing/templates/index.html	/^  function slide(){$/;"	f
+slide	Video_capturing/templates/index_2.html	/^  function slide(){$/;"	f
+slide	Video_capturing/templates/index_new.html	/^  function slide(){$/;"	f
+slide	Video_capturing/templates/proba.html	/^  function slide(){$/;"	f
+strDebugWindowName	live_streaming_example.py	/^strDebugWindowName = "Video Monitor"; # "DebugWindow"; # set to false to have no debug windows$/;"	v
+strDebugWindowName2	live_streaming_example.py	/^    strDebugWindowName2 = "Video Monitor Right (or Bottom)"; # "DebugWindow"; # set to false to have no debug windows$/;"	v
+strFilename	live_streaming_example.py	/^                    strFilename = "\/tmp\/" + strFilename;$/;"	v
+strFilename	live_streaming_example.py	/^                    strFilename = "camera_viewer_%04d_%s.png" % ( nCptImageSaved, strTime);$/;"	v
+strFilename	live_streaming_example.py	/^                    strFilename = strFilename.replace( ".png", ".jpg" );$/;"	v
+strFilename	live_streaming_example.py	/^                strFilename = "camera_viewer_%d_%s_%04d.png" % ( avd.getParam(kSelectCamera),  strTime, nCptImageSaved );$/;"	v
+strFilenameL	live_streaming_example.py	/^                    strFilenameL = strFilename.replace( ".p", "_l.p" );$/;"	v
+strFilenameR	live_streaming_example.py	/^                    strFilenameR = strFilename.replace( ".p", "_r.p" );$/;"	v
+strMyClientName	live_streaming_example.py	/^    strMyClientName = avd.subscribe( strMyClientName, nWantedResolution, nColorSpace, nFps );$/;"	v
+strMyClientName	live_streaming_example.py	/^    strMyClientName = avd.subscribeCameras( strMyClientName, [0,1], [nWantedResolution,nWantedResolution], [nColorSpace,nColorSpace], nFps );$/;"	v
+strMyClientName	live_streaming_example.py	/^strMyClientName = "nao_camera_viewer";$/;"	v
+strNaoIp	live_streaming_example.py	/^strNaoIp = "10.0.160.147"$/;"	v
+strNaoIp	live_streaming_example.py	/^strNaoIp = "10.0.204.18" # PepperAlex$/;"	v
+strNaoIp	live_streaming_example.py	/^strNaoIp = "10.0.253.99"; # NaoAlexBlue$/;"	v
+strNaoIp	live_streaming_example.py	/^strNaoIp = "10.0.254.120"; # Romeo$/;"	v
+strNaoIp	live_streaming_example.py	/^strNaoIp = "10.9.45.11"$/;"	v
+strNaoIp	live_streaming_example.py	/^strNaoIp = "169.254.168.203"$/;"	v
+strNaoIp	live_streaming_example.py	/^strNaoIp = "192.168.1.141"; # TheFreak$/;"	v
+strNaoIp	live_streaming_example.py	/^strNaoIp = "198.18.0.1" # Default Romeo$/;"	v
+strNaoIp	live_streaming_example.py	/^strNaoIp = "bebedege.local"$/;"	v
+strPath	live_streaming_example.py	/^strPath = getNaoqiPath();$/;"	v
+strTime	live_streaming_example.py	/^                    strTime = "_%5.2f" % time.time();$/;"	v
+strTime	live_streaming_example.py	/^                    strTime = strTime.replace( ".", "_" );                    $/;"	v
+strTime	live_streaming_example.py	/^                    strTime = strTime.replace( ".", "_" );$/;"	v
+strTime	live_streaming_example.py	/^                strTime = "";$/;"	v
+test	live_streaming_example.py	/^def test( bufferImage, strTrainoutFile ):$/;"	f
+timeBegin	live_streaming_example.py	/^                timeBegin = time.time();$/;"	v
+timeBegin	live_streaming_example.py	/^timeBegin = time.time();$/;"	v
+tts	localize_speech.py	/^tts = None$/;"	v
+videoDevice	localize_speech.py	/^videoDevice = None$/;"	v
+video_feed	Video_capturing/videoserver.py	/^def video_feed():$/;"	f
+work	live_streaming_example.py	/^work = cv.CreateImage( cv.GetSize(bufferImageToDraw), cv.IPL_DEPTH_8U, 3 );$/;"	v
+writeToScreen	Video_capturing/templates/index.html	/^  function writeToScreen(message)$/;"	f
+writeToScreen	Video_capturing/templates/index_2.html	/^  function writeToScreen(message)$/;"	f
+writeToScreen	Video_capturing/templates/index_new.html	/^  function writeToScreen(message)$/;"	f
+writeToScreen	Video_capturing/templates/proba.html	/^  function writeToScreen(message)$/;"	f
+yuvToRgb	live_streaming_example.py	/^def yuvToRgb( yuv ):$/;"	f

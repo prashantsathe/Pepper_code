@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8" />
+
+<title>WebSocket Test</title><style>
+
+
+<head>
+<style>
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0%;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 0%;
+    width: 25%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px !important;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .closebtn {
+    font-size: 40px !important;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+nav {
+    background-image: url("../nao.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    line-height:30px;
+    background-color:none;
+    height:95%;
+    width:95%;
+    position:absolute;
+    padding:5px;
+    left:2.5%;
+ top:2.5%;
+}
+#head {
+    width:30%;
+    height:10%;
+    background-color:none;
+    position: absolute;
+    left: 65%;
+    top: 70%;
+text-align:center;
+
+
+}
+#arrows {
+     width:30%;
+    height:10%;
+    position: absolute;
+    left: 5%;
+    top: 70%;
+    background-color:none;
+   text-align:center;
+}
+#chat_bar_l {
+    position: absolute;
+    left:1%;
+    top:90%;
+    height:10%;
+    background-color:none;
+    color:white;
+    clear:both;
+    text-align:left;
+    width:50%;
+
+}
+#chat_bar_r {
+     position: absolute;
+    left:49%;
+    top:90%;
+    height:10%;
+    background-color:none;
+    color:white;
+    clear:both;
+    text-align:right;
+    width:50%;
+
+}
+
+.text {
+ background:transparent;
+
+ border:1px dotted white;
+
+  color: #e7e7e7;
+ type:"text";
+}
+
+.chat_txt{
+  width:40%;
+  color:white;
+}
+.nao_txt{
+  width:40%;
+  color:white;
+}
+.chat_txt:hover {
+  background-color: #e7e7e7;
+   color: black;
+}
+.nao_txt:hover {
+  background-color: #e7e7e7;
+   color: black;
+}
+
+.button4 {
+    background-color:transparent;
+    color: #e7e7e7;
+   border:1px dotted;
+    width:4%
+   position:absolute;
+  left:95%;
+  top:50%;
+   
+
+
+}
+
+.button4:hover {
+  background-color: #e7e7e7;
+   color: black;
+}
+.buttonF:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.buttonF {
+   background-color:transparent;
+    color: #e7e7e7;
+   border:1px dotted;
+    width:40%;
+    height:30%
+text-align:center;
+
+
+
+}
+
+.buttonF:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.menuBtn {
+    
+	 border:none;
+	  background-color: transparent;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  
+
+}
+.buttonH {
+    position: absolute;
+    top:0%;
+    background-color:transparent;
+    color: #e7e7e7;
+   border:1px dotted;
+}
+.buttonH:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.menuBtn:hover {
+    color: white;
+}
+.menuBtn:focus {
+outline: none;
+}
+.menuBtn:active {
+ 
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.buttonSnf {
+    position: absolute;
+    top:0%;
+     left:80%
+    background-color:3e8e41;
+    color: black;
+   border:1px dotted;
+
+}
+.battxt {
+   width:4%;
+    position: absolute;
+    top:0%;
+     left:95%;
+    background-color:3e8e41;
+   text-align:center;
+    color: black;
+   border:none;
+    background-color:transparent;
+    background-position: center;
+     opacity:0.5;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.battxt:hover {
+    background-color: none;
+    color: black;
+     opacity:0.8;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+</style>
+</head>
+
+<script language="javascript" type="text/javascript">
+var cmdList=[
+'ARMREST',
+'BACK',
+'DISCONNECT',
+'FORWARD',
+'HEADPITCH',
+'HEADYAW',
+'LARMCLOSE',
+'LARMDOWN',
+'LARMOPEN',
+'LARMUP',
+'LEFT',
+'MUSIC_DOWN',
+'MUSIC_FORWARD',
+'MUSIC_NEXT',
+'MUSIC_OFF',
+'MUSIC_ON',
+'MUSIC_PAUSE',
+'MUSIC_PLAY',
+'MUSIC_PREVIOUS',
+'MUSIC_REWIND',
+'MUSIC_UP',
+'MUSIC_URL',
+'OBSTACLE',
+'POSTURE_CROUCH',
+'POSTURE_CUSTOMER',
+'POSTURE_DELETE',
+'POSTURE_LYINGBACK',
+'POSTURE_LYINGBELLY',
+'POSTURE_STADNINIT',
+'POSTURE_RECORD',
+'POSTURE_RECORD_STOP',
+'POSTURE_SIT',
+'POSTURE_SITRELAX',
+'POSTURE_STADN',
+'POSTURE_STADNZERO',
+'RARMCLOSE',
+'RARMDOWN',
+'RARMOPEN',
+'RARMUP',
+'REST',
+'RIGHT',
+'SAY',
+'SENSOR',
+'STOP',
+'TURNLEFT',
+'TURNRIGHT',
+'SWITCH_CAMERA',
+'WAKEUP'
+];
+var ip = location.host;
+ ip = ip.split(":");
+
+var arr = [];
+var video=''
+ var str11 = "http://";
+    var str21 = ip[0];
+   // var str21 ="127.0.0.1";
+    var str31 = ":5003/video_feed";
+    var video = str11.concat(str21);
+    video=video.concat(str31);
+arr[0]= new Image();
+arr[0].src = video;
+var socket=""
+
+var connBtn;
+var connected=0;
+var bat =50;
+arr[1]= new Image();
+arr[1].src = video;
+arr[2]= new Image();
+arr[2].src =video;
+var cmdOpen=0;
+  function init()
+  {
+    var str1 = "ws://";
+   var str2 = ip[0];    ///habilitar dentro del nao
+   //var str2 ="127.0.0.1";
+    var str3 = ":8000/";
+    socket = str1.concat(str2);
+    //var person = prompt("Please enter your name", "Leo");
+
+
+    socket=socket.concat(str3);
+
+     
+ 
+   
+  }
+
+
+ function cmdARMREST(){   doSend('ARMREST');  }
+function cmdBACK(){   doSend('BACK');  }
+function cmdDISCONNECT(){   doSend('DISCONNECT');  }
+function cmdFORWARD(){   doSend('FORWARD');  }
+function cmdHEADPITCH(){   doSend('HEADPITCH');  }
+function cmdHEADYAW(){   doSend('HEADYAW');  }
+function cmdLARMCLOSE(){   doSend('LARMCLOSE');  }
+function cmdLARMDOWN(){   doSend('LARMDOWN');  }
+function cmdLARMOPEN(){   doSend('LARMOPEN');  }
+function cmdLARMUP(){   doSend('LARMUP');  }
+function cmdLEFT(){   doSend('LEFT');  }
+function cmdMUSIC_DOWN(){   doSend('MUSIC_DOWN');  }
+function cmdMUSIC_FORWARD(){   doSend('MUSIC_FORWARD');  }
+function cmdMUSIC_NEXT(){   doSend('MUSIC_NEXT');  }
+function cmdMUSIC_OFF(){   doSend('MUSIC_OFF');  }
+function cmdMUSIC_ON(){   doSend('MUSIC_ON');  }
+function cmdMUSIC_PAUSE(){   doSend('MUSIC_PAUSE');  }
+function cmdMUSIC_PLAY(){   doSend('MUSIC_PLAY');  }
+function cmdMUSIC_PREVIOUS(){   doSend('MUSIC_PREVIOUS');  }
+function cmdMUSIC_REWIND(){   doSend('MUSIC_REWIND');  }
+function cmdMUSIC_UP(){   doSend('MUSIC_UP');  }
+function cmdMUSIC_URL(){   doSend('MUSIC_URL');  }
+function cmdOBSTACLE(){   doSend('OBSTACLE');  }
+function cmdPOSTURE_CROUCH(){   doSend('POSTURE_CROUCH');  }
+function cmdPOSTURE_CUSTOMER(){   doSend('POSTURE_CUSTOMER');  }
+function cmdPOSTURE_DELETE(){   doSend('POSTURE_DELETE');  }
+function cmdPOSTURE_LYINGBACK(){   doSend('POSTURE_LYINGBACK');  }
+function cmdPOSTURE_LYINGBELLY(){   doSend('POSTURE_LYINGBELLY');  }
+function cmdPOSTURE_STADNINIT(){   doSend('POSTURE_STADNINIT');  }
+function cmdPOSTURE_RECORD(){   doSend('POSTURE_RECORD');  }
+function cmdPOSTURE_RECORD_STOP(){   doSend('POSTURE_RECORD_STOP');  }
+function cmdPOSTURE_SIT(){   doSend('POSTURE_SIT');  }
+function cmdPOSTURE_SITRELAX(){   doSend('POSTURE_SITRELAX');  }
+function cmdPOSTURE_STADN(){   doSend('POSTURE_STADN');  }
+function cmdPOSTURE_STADNZERO(){   doSend('POSTURE_STADNZERO');  }
+function cmdRARMCLOSE(){   doSend('RARMCLOSE');  }
+function cmdRARMDOWN(){   doSend('RARMDOWN');  }
+function cmdRARMOPEN(){   doSend('RARMOPEN');  }
+function cmdRARMUP(){   doSend('RARMUP');  }
+function cmdREST(){   doSend('REST');  }
+function cmdRIGHT(){   doSend('RIGHT');  }
+function cmdSAY(){   doSend('SAY');  }
+function cmdSENSOR(){   doSend('SENSOR');  }
+function cmdSTOP(){   doSend('STOP');  }
+function cmdTURNLEFT(){   doSend('TURNLEFT');  }
+function cmdTURNRIGHT(){   doSend('TURNRIGHT');  }
+function cmdSWITCH_CAMERA(){   doSend('SWITCH_CAMERA');  }
+
+
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+	closecmdNav()
+	
+}
+
+function opencmdNav() {
+    cmdOpen=1;
+    document.getElementById("cmdNav").style.top = "25%";
+	 document.getElementById("cmdNav").style.left = "12.5%";
+    document.getElementById("cmdNav").style.width = "400px";
+}
+
+function closecmdNav() {
+    document.getElementById("cmdNav").style.width = "0%";
+}
+function disableAll()
+  {
+    
+    document.myform.inputtext.disabled = true;
+   document.myform.chatBtn.disabled = true;
+  document.myform.uharrBtn.disabled = true;
+document.myform.dharrBtn.disabled = true;
+document.myform.lharrBtn.disabled = true;
+document.myform.rharrBtn.disabled = true;
+ document.myform.udarrBtn.disabled = true;
+document.myform.ddarrBtn.disabled = true;
+document.myform.ldarrBtn.disabled = true;
+document.myform.rdarrBtn.disabled = true;
+
+document.getElementById("cmdButtonid").disabled=true;
+  }
+function enableAll()
+  {
+    
+    document.myform.inputtext.disabled = false;
+   document.myform.chatBtn.disabled = false;
+ document.myform.uharrBtn.disabled =false;
+document.myform.dharrBtn.disabled = false;
+document.myform.lharrBtn.disabled = false;
+document.myform.rharrBtn.disabled = false;
+ document.myform.udarrBtn.disabled =false;
+document.myform.ddarrBtn.disabled = false;
+document.myform.ldarrBtn.disabled = false;
+document.myform.rdarrBtn.disabled = false;
+
+document.getElementById("cmdButtonid").disabled=false;
+
+  }
+
+
+
+function Connect()
+  {
+	
+	if (connected==0) doConnect();
+	else doDisconnect();
+  }
+  function doConnect()
+  {
+    
+       
+         
+          websocket = new WebSocket(socket);
+          websocket.onopen = function(evt) { onOpen(evt) };
+          websocket.onclose = function(evt) { onClose(evt) };
+          websocket.onmessage = function(evt) { onMessage(evt) };
+          websocket.onerror = function(evt) { onError(evt) };
+  
+
+
+  }
+
+  function onOpen(evt)
+  {
+     
+     
+     //document.myform.connectButton.style.visibility="hidden";
+    //document.myform.disconnectButton.style.visibility="visible";
+     document.getElementById("nav").style.backgroundImage  ='url(' + video +')';
+   document.getElementById("batTxt").style.backgroundImage=' url("bat50.png")';
+    document.myform.batTxt.value =bat+"%" ;
+	document.myform.connectButton.value ="Disconect" ;
+	
+   writeToScreen("connected\n");
+   enableAll()
+   connected=1;
+ //document.myform.connectButton.disabled = true;
+ //document.myform.disconnectButton.disabled = false;
+ //document.myform.sendButton.disabled = false;
+  }
+
+  function onClose(evt)
+  {
+   
+   connected=0;
+     document.myform.connectButton.value ="Connect" ;
+ document.getElementById("nav").style.backgroundImage  = "url('nao.png')";
+  closecmdNav();
+  disableAll();
+  }
+
+  function onMessage(evt)
+  {
+    writeToScreen("response: " + evt.data + '\n');
+    //window.alert("data:text/javascript;base64,"+ evt.data);
+    //arr[0].src = "data:text/javascript;base64,"+ evt.data;
+  }
+
+  function onError(evt)
+  {
+    writeToScreen('error: ' + evt.data + '\n');
+
+ websocket.close();
+disableAll();
+  }
+
+  function doSend(message)
+  {
+    writeToScreen("sent: " + message + '\n');
+   
+    websocket.send(message );
+      document.myform.inputtext.value="";
+    
+      }
+
+  function writeToScreen(message)
+  {
+    document.myform.nao_chat.value = message
+
+
+ //document.myform.outputtext.scrollTop = document.myform.outputtext.scrollHeight;
+
+  }
+
+  window.addEventListener("load", init(), false);
+
+
+   function sendText() {
+     msg=document.myform.inputtext.value;
+     doSend(msg);
+   }
+  
+ function doChat() {
+    
+      str2= "SAY ";
+     str3 =document.myform.inputtext.value;
+     msg= str2.concat(str3);
+     doSend(msg);
+   }
+ 
+  function clearText() {
+  document.myform.outputtext.value = "";
+   }
+
+   function doDisconnect() {
+
+       websocket.close();
+   }
+  var i=0;
+  function slide(){
+      document.getElementById("image1").src= arr[i].src;
+      i++;
+      if(i==arr.length){
+      i=0;
+  }
+  setTimeout(function(){ slide(); },1);
+}
+
+
+</script>
+<form name="myform"  >
+
+
+
+
+
+
+
+
+<nav id="nav">
+
+<span style="font-size:30px;cursor:pointer color:black;" class="buttonH" onclick="openNav()">&#9776;</span>
+
+ <input class="text battxt" id = "batTxt" name="batTxt" disabled/>
+
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn"     onclick="closeNav()">×</a>
+  <div class="overlay-content">
+  <div >
+	<input type="button"  class="menuBtn" name="connectButton" id="connectButtonid" onclick="Connect()" value='Connect'>
+	<input type="button"  class="menuBtn" name="cmdButton" id="cmdButtonid" disabled onclick="opencmdNav()" value='Command'>
+    
+  </div>
+
+</div>
+</div>
+<div id="cmdNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn"     onclick="closecmdNav()">×</a>
+  <div class="overlay-content">
+  <div >
+    <input type='button' class='menuBtn' name='ARMREST' id='ARMREST' onclick='cmdARMREST()'  value='ARMREST'>
+	<input type='button' class='menuBtn' name='BACK' id='BACK' onclick='cmdBACK()'  value='BACK'>
+	<input type='button' class='menuBtn' name='DISCONNECT' id='DISCONNECT' onclick='cmdDISCONNECT()'  value='DISCONNECT'>
+	<input type='button' class='menuBtn' name='FORWARD' id='FORWARD' onclick='cmdFORWARD()'  value='FORWARD'>
+	<input type='button' class='menuBtn' name='HEADPITCH' id='HEADPITCH' onclick='cmdHEADPITCH()'  value='HEADPITCH'>
+	<input type='button' class='menuBtn' name='HEADYAW' id='HEADYAW' onclick='cmdHEADYAW()'  value='HEADYAW'>
+	<input type='button' class='menuBtn' name='LARMCLOSE' id='LARMCLOSE' onclick='cmdLARMCLOSE()'  value='LARMCLOSE'>
+	<input type='button' class='menuBtn' name='LARMDOWN' id='LARMDOWN' onclick='cmdLARMDOWN()'  value='LARMDOWN'>
+	<input type='button' class='menuBtn' name='LARMOPEN' id='LARMOPEN' onclick='cmdLARMOPEN()'  value='LARMOPEN'>
+	<input type='button' class='menuBtn' name='LARMUP' id='LARMUP' onclick='cmdLARMUP()'  value='LARMUP'>
+	<input type='button' class='menuBtn' name='LEFT' id='LEFT' onclick='cmdLEFT()'  value='LEFT'>
+	<input type='button' class='menuBtn' name='MUSIC DOWN' id='MUSIC DOWN' onclick='cmdMUSIC_DOWN()'  value='MUSIC DOWN'>
+	<input type='button' class='menuBtn' name='MUSIC FORWARD' id='MUSIC FORWARD' onclick='cmdMUSIC_FORWARD()'  value='MUSIC FORWARD'>
+	<input type='button' class='menuBtn' name='MUSIC NEXT' id='MUSIC NEXT' onclick='cmdMUSIC_NEXT()'  value='MUSIC NEXT'>
+	<input type='button' class='menuBtn' name='MUSIC OFF' id='MUSIC OFF' onclick='cmdMUSIC_OFF()'  value='MUSIC OFF'>
+	<input type='button' class='menuBtn' name='MUSIC ON' id='MUSIC ON' onclick='cmdMUSIC_ON()'  value='MUSIC ON'>
+	<input type='button' class='menuBtn' name='MUSIC PAUSE' id='MUSIC PAUSE' onclick='cmdMUSIC_PAUSE()'  value='MUSIC PAUSE'>
+	<input type='button' class='menuBtn' name='MUSIC PLAY' id='MUSIC PLAY' onclick='cmdMUSIC_PLAY()'  value='MUSIC PLAY'>
+	<input type='button' class='menuBtn' name='MUSIC PREVIOUS' id='MUSIC PREVIOUS' onclick='cmdMUSIC_PREVIOUS()'  value='MUSIC PREVIOUS'>
+	<input type='button' class='menuBtn' name='MUSIC REWIND' id='MUSIC REWIND' onclick='cmdMUSIC_REWIND()'  value='MUSIC REWIND'>
+	<input type='button' class='menuBtn' name='MUSIC UP' id='MUSIC UP' onclick='cmdMUSIC_UP()'  value='MUSIC UP'>
+	<input type='button' class='menuBtn' name='MUSIC URL' id='MUSIC URL' onclick='cmdMUSIC_URL()'  value='MUSIC URL'>
+	<input type='button' class='menuBtn' name='OBSTACLE' id='OBSTACLE' onclick='cmdOBSTACLE()'  value='OBSTACLE'>
+	<input type='button' class='menuBtn' name='POSTURE CROUCH' id='POSTURE CROUCH' onclick='cmdPOSTURE_CROUCH()'  value='POSTURE CROUCH'>
+	<input type='button' class='menuBtn' name='POSTURE CUSTOMER' id='POSTURE CUSTOMER' onclick='cmdPOSTURE_CUSTOMER()'  value='POSTURE CUSTOMER'>
+	<input type='button' class='menuBtn' name='POSTURE DELETE' id='POSTURE DELETE' onclick='cmdPOSTURE_DELETE()'  value='POSTURE DELETE'>
+	<input type='button' class='menuBtn' name='POSTURE LYINGBACK' id='POSTURE LYINGBACK' onclick='cmdPOSTURE_LYINGBACK()'  value='POSTURE LYINGBACK'>
+	<input type='button' class='menuBtn' name='POSTURE LYINGBELLY' id='POSTURE LYINGBELLY' onclick='cmdPOSTURE_LYINGBELLY()'  value='POSTURE LYINGBELLY'>
+	<input type='button' class='menuBtn' name='POSTURE MOVEINIT' id='POSTURE MOVEINIT' onclick='cmdPOSTURE_STADNINIT()'  value='POSTURE MOVEINIT'>
+	<input type='button' class='menuBtn' name='POSTURE RECORD' id='POSTURE RECORD' onclick='cmdPOSTURE_RECORD()'  value='POSTURE RECORD'>
+	<input type='button' class='menuBtn' name='POSTURE RECORD STOP' id='POSTURE RECORD STOP' onclick='cmdPOSTURE_RECORD_STOP()'  value='POSTURE RECORD STOP'>
+	<input type='button' class='menuBtn' name='POSTURE SIT' id='POSTURE SIT' onclick='cmdPOSTURE_SIT()'  value='POSTURE SIT'>
+	<input type='button' class='menuBtn' name='POSTURE SITRELAX' id='POSTURE SITRELAX' onclick='cmdPOSTURE_SITRELAX()'  value='POSTURE SITRELAX'>
+	<input type='button' class='menuBtn' name='POSTURE STAND' id='POSTURE STAND' onclick='cmdPOSTURE_STADN()'  value='POSTURE STAND'>
+	<input type='button' class='menuBtn' name='POSTURE STANDZERO' id='POSTURE STANDZERO' onclick='cmdPOSTURE_STADNZERO()'  value='POSTURE STANDZERO'>
+	<input type='button' class='menuBtn' name='RARMCLOSE' id='RARMCLOSE' onclick='cmdRARMCLOSE()'  value='RARMCLOSE'>
+	<input type='button' class='menuBtn' name='RARMDOWN   ' id='RARMDOWN   ' onclick='cmdRARMDOWN()'  value='RARMDOWN   '>
+	<input type='button' class='menuBtn' name='RARMOPEN' id='RARMOPEN' onclick='cmdRARMOPEN()'  value='RARMOPEN'>
+	<input type='button' class='menuBtn' name='RARMUP' id='RARMUP' onclick='cmdRARMUP()'  value='RARMUP'>
+	<input type='button' class='menuBtn' name='REST' id='REST' onclick='cmdREST()'  value='REST'>
+	<input type='button' class='menuBtn' name='RIGHT' id='RIGHT' onclick='cmdRIGHT()'  value='RIGHT'>
+	<input type='button' class='menuBtn' name='SAY  ' id='SAY  ' onclick='cmdSAY()'  value='SAY  '>
+	<input type='button' class='menuBtn' name='SENSOR' id='SENSOR' onclick='cmdSENSOR()'  value='SENSOR'>
+	<input type='button' class='menuBtn' name='STOP' id='STOP' onclick='cmdSTOP()'  value='STOP'>
+	<input type='button' class='menuBtn' name='TURNLEFT' id='TURNLEFT' onclick='cmdTURNLEFT()'  value='TURNLEFT'>
+	<input type='button' class='menuBtn' name='TURNRIGHT' id='TURNRIGHT' onclick='cmdTURNRIGHT()'  value='TURNRIGHT'>
+	<input type='button' class='menuBtn' name='VIDEO SWITCH CAMARA' id='VIDEO SWITCH CAMARA' onclick='cmdSWITCH_CAMERA()'  value='VIDEO SWITCH CAMARA'>
+	<input type='button' class='menuBtn' name='WAKEUP' id='WAKEUP' onclick='cmdWAKEUP()'  value='WAKEUP'>
+
+
+    
+  </div>
+
+</div>
+</div>
+<div id = "conn" class="wrapper">
+    
+    
+    
+</div>
+
+<div id="head">
+  <input type="button" name ="uharrBtn" class="button buttonF" onmousedown="doSend('FORWARD')"  onmouseup="doSend('STOP')" disabled value="&uArr;"/><br>
+  <input type="button" name ="lharrBtn" class="button buttonF" onmousedown="doSend('TURNLEFT')"  onmouseup="doSend('STOP')" disabled value="&lArr;"/>
+  <<input type="button" name ="rharrBtn" class="button buttonF" onmousedown="doSend('TURNRIGHT')"  onmouseup="doSend('STOP')" disabled value="&rArr;"/><br>
+  <input type="button" name ="dharrBtn" class="button buttonF" onmousedown="doSend('BACK')"  onmouseup="doSend('STOP')" disabled value="&dArr;"/>
+</div>
+
+<div id="arrows">
+  <input type="button"  name ="udarrBtn" class="button buttonF" onmousedown="doSend('FORWARD')"  onmouseup="doSend('STOP')" disabled value="&uArr;"/><br>
+  <input type="button" name ="ldarrBtn" class="button buttonF" onmousedown="doSend('TURNLEFT')"  onmouseup="doSend('STOP')" disabled value="&lArr;"/>
+  <input type="button" name ="rdarrBtn" class="button buttonF" onmousedown="doSend('TURNRIGHT')"  onmouseup="doSend('STOP')"  disabled value="&rArr;"/><br>
+  <input type="button" name ="ddarrBtn" class="button buttonF" onmousedown="doSend('BACK')" onmouseup="doSend('STOP')" disabled value="&dArr;"/>
+</div>
+
+<div id="chat_bar_l">
+    <input class="button4" onClick="doChat()"  name ="chatBtn" type="button" value="Chat" disabled />
+    <input class="text chat_txt" name="inputtext" value="Ciao" disabled/>
+</div>
+<div id="chat_bar_r">
+    <input class="button4" onClick="sendText()"  type="button" value="Nao" disabled />
+    <input class="text nao_txt" name="nao_chat" disabled/>
+</div>
+</nav>
+</form>
+</html>

@@ -18,7 +18,7 @@ def main(session):
 	#motion_service.setTangentialSecurityDistance(0.01)
 
     	# Explore the environement, in a radius of 2 m.
-	radius = 25.0
+	radius = 3.0
 	error_code = navigation_service.explore(radius)
 	if error_code != 0:
 		print "Exploration failed."

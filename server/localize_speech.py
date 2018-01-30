@@ -13,6 +13,8 @@ import sys
 import numpy as np
 import cv2
 import base64
+import thread
+import datetime
 
 # AL_resolution
 AL_kQQQQVGA = 8 	#Image of 40*30px
@@ -47,56 +49,99 @@ motion_service = None
 tts = None
 videoDevice = None
 ALDialog = None
+ALpepper_navigation = False  # Boolean global variable
+captureDevice = None
+counter = 1
 
 
-def capture_image(captureDevice):
+def capture_image(threadName, captureDevice):
+    global ALpepper_navigation
+    global videoDevice
+    global counter
+
     # create image TODO This need to be in accordance with the capture image size
     width = 320
     height = 240
-    image = np.zeros((height, width, 3), np.uint8)
+    nLocation = ""
+    print "## Thread has started: " + str(ALpepper_navigation)
 
-    # get image
-    result = videoDevice.getImageRemote(captureDevice);
+    while (ALpepper_navigation == True):
+        image = np.zeros((height, width, 3), np.uint8)
 
-    if result == None:
-        print 'cannot capture.'
-    elif result[6] == None:
-        print 'no image data string.'
-    else:
+        ''' # get image
+        nLocation = str(navigation_service.getRobotPositionInMap()[0])
+        #nLocation2 = str(navigation_service.getRobotPositionInMap()[1])
+        print "I reached at: " + nLocation 
+        # print "I uncertainty at: " + nLocation2 
+        # filename = '/home/nao/images/camera-%s-%s.png'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S')%nLocation
+        # filename = '/home/nao/images/camera-%s.png'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S')
+        filename = '/home/nao/images/camera-%s.png'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S')
         '''
-        # translate value to map
-        values = map(ord, list(result[6]))
-        i = 0
-        for y in range(0, height):
-            for x in range(0, width):
-                image.itemset((y, x, 0), values[i + 0])
-                image.itemset((y, x, 1), values[i + 1])
-                image.itemset((y, x, 2), values[i + 2])
-                i += 3
-        # show image
-        cv2.imshow("pepper-Depth-camera-320x240", image)
-        '''
-        # Get the image size and pixel array.
-        imageWidth = result[0]
-        imageHeight = result[1]
-        array = result[6]
-        image_string = str(bytearray(array))
+        # get image
+        nLocation = navigation_service.getRobotPositionInMap()[0]
+        print "I reached at: " + str(nLocation)
+        # print "I uncertainty at: " + nLocation2 
+        # filename = '/home/nao/images/camera-%s.png'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S')
+        #filename = "/home/nao/images/camera_%0.5f_%0.5f_%0.5f.png"%(nLocation[0],nLocation[1],nLocation[2])
+        filename = "/home/prashant/work/deep_learning/softbank_robot/sample_code/Pepper_code/server/Images/c%0.5d_%0.5f_%0.5f_%0.5f.png"%(counter, nLocation[0],nLocation[1],nLocation[2])
+        counter += 1
+        print ">" + filename
 
-        # Create a PIL Image from our pixel array.
-        im = Image.frombytes("RGB", (imageWidth, imageHeight), image_string)
-        # Save the image.
-        im.save("camImage.png", "PNG")
-        im.show()
+        print "Start-%s: %s" % (threadName, datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S'))
+        result = videoDevice.getImageRemote(captureDevice);
+        print "End-%s: %s" % (threadName, datetime.datetime.now().strftime('%Y-%m-%d-%H%M%S'))
 
-def navigate(x, y, z):
+        if result == None:
+            print 'cannot capture.'
+        elif result[6] == None:
+            print 'no image data string.'
+        else:
+            '''
+            # translate value to map
+            values = map(ord, list(result[6]))
+            i = 0
+            for y in range(0, height):
+                for x in range(0, width):
+                    image.itemset((y, x, 0), values[i + 0])
+                    image.itemset((y, x, 1), values[i + 1])
+                    image.itemset((y, x, 2), values[i + 2])
+                    i += 3
+            # show image
+            cv2.imshow("pepper-Depth-camera-320x240", image)
+            '''
+            print "Got an image"
+            # Get the image size and pixel array.
+            imageWidth = result[0]
+            imageHeight = result[1]
+            array = result[6]
+            image_string = str(bytearray(array))
+
+            # Create a PIL Image from our pixel array.
+            im = Image.frombytes("RGB", (imageWidth, imageHeight), image_string)
+            # Save the image.
+            #im.save("camImage.png", "PNG")
+            im.save(filename, "PNG")
+            #im.show()
+            # time.sleep(0.002)
+
+def navigate(captureDevice, x, y, z):
     global navigation_service
     global tts
+    global ALpepper_navigation
 
-    #navigation_service.navigateToInMap([float(x), float(y), float(z)])
+    # navigation_service.navigateToInMap([float(x), float(y), float(z)])
     # Check where the robot arrived
-    #print "I reached: " + str(navigation_service.getRobotPositionInMap()[0])
+    # print "I reached: " + str(navigation_service.getRobotPositionInMap()[0])
     max_attempts = 5
     attempt = 1
+
+    # start Image capturing thread
+    # Create two threads as follows
+    ALpepper_navigation = True
+    try:
+        thread.start_new_thread(capture_image, ("Thread-CaptureImage", captureDevice ))
+    except:
+        print "###Error: unable to start thread"
 
     while (attempt <= max_attempts):
         # if self.stopPatrol:
@@ -117,6 +162,12 @@ def navigate(x, y, z):
         else:
             tts.say("Stopping now")
             break
+
+    ALpepper_navigation = False
+
+def gotoAbhishekRoom():
+    global captureDevice 
+    print"Sure lets Go #####"
 
 def main(session, exploration_file, topic_path):
 
@@ -150,7 +201,7 @@ def main(session, exploration_file, topic_path):
 
         # Relocalize the robot and start the localization process.
         guess = [0., 0.] # assuming the robot is not far from the place where
-                     # he started the loaded exploration.
+                         # he started the loaded exploration.
         navigation_service.relocalizeInMap(guess)
         navigation_service.startLocalization()
 
@@ -189,10 +240,13 @@ def main(session, exploration_file, topic_path):
                     print(lists)
                 else:
                     x, y, z = lists.split("/")
-                    navigate(x, y, z)
+                    navigate(captureDevice, x, y, z)
                     # capture image and location
-                    capture_image(captureDevice)
-                    print "FINAL I reached at: " + str(navigation_service.getRobotPositionInMap()[0])
+                    # capture_image(captureDevice)
+                    # global ALpepper_navigation
+                    # ALpepper_navigation = True
+                    # capture_image("Thread", captureDevice)
+                    print "FINALLY I reached at: " + str(navigation_service.getRobotPositionInMap()[0])
 
         # Check where the robot arrived
         print "I reached: " + str(navigation_service.getRobotPositionInMap()[0])

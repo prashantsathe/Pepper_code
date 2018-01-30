@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8" />
+
+<title>WebSocket Test</title><style>
+
+
+<head>
+<style>
+body {
+    background-image: url("http://127.0.0.1:5003/video_feed");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+nav {
+    background-image: url("http://127.0.0.1:5003/video_feed");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    line-height:30px;
+    background-color:#eeeeee;
+    height:90%;
+    width:90%;
+    position:absolute;
+    padding:5px;
+    left:5%;
+ top:5%;
+}
+#head {
+    width:30%;
+    height:10%;
+    background-color:black;
+    position: absolute;
+    left: 65%;
+    top: 70%;
+text-align:center;
+
+
+}
+#arrows {
+     width:30%;
+    height:10%;
+    position: absolute;
+    left: 5%;
+    top: 70%;
+    background-color:blue;
+   text-align:center;
+}
+#chat_bar_l {
+    position: absolute;
+    left:1%;
+    top:90%;
+    height:10%;
+    background-color:none;
+    color:white;
+    clear:both;
+    text-align:left;
+    width:50%;
+
+}
+#chat_bar_r {
+     position: absolute;
+    left:49%;
+    top:90%;
+    height:10%;
+    background-color:none;
+    color:white;
+    clear:both;
+    text-align:right;
+    width:50%;
+
+}
+
+.text {
+ background:transparent;
+
+ border:1px dotted white;
+
+  color: #e7e7e7;
+ type:"text";
+}
+
+.chat_txt{
+  width:40%;
+  color:white;
+}
+.nao_txt{
+  width:40%;
+  color:white;
+}
+.chat_txt:hover {
+  background-color: #e7e7e7;
+   color: black;
+}
+.nao_txt:hover {
+  background-color: #e7e7e7;
+   color: black;
+}
+
+.button4 {
+    background-color:transparent;
+    color: #e7e7e7;
+   border:1px dotted;
+    width:4%
+   position:absolute;
+  left:95%;
+  top:50%;
+   
+
+
+}
+
+.button4:hover {
+  background-color: #e7e7e7;
+   color: black;
+}
+.buttonF:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.buttonF {
+   background-color:transparent;
+    color: #e7e7e7;
+   border:1px dotted;
+    width:40%;
+    height:30%
+text-align:center;
+
+
+
+}
+
+.buttonF:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.wrapper {
+    text-align: center;
+
+}
+
+.buttonC {
+    position: absolute;
+    top:0%;
+    background-color:transparent;
+    color: #e7e7e7;
+   border:1px dotted;
+}
+.buttonC:hover {
+    background-color: #008CBA;
+    color: white;
+}
+.buttonC:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+</head>
+
+<script language="javascript" type="text/javascript">
+
+var ip = location.host;
+ ip = ip.split(":");
+
+var arr = [];
+var video=''
+ var str11 = "http://";
+    var str21 = ip[0];
+    var str31 = ":5000/video_feed";
+    var video = str11.concat(str21);
+    video=video.concat(str31);
+arr[0]= new Image();
+arr[0].src = video;
+var socket=""
+
+var connected=0;
+arr[1]= new Image();
+arr[1].src = video;
+arr[2]= new Image();
+arr[2].src =video;
+  function init()
+  {
+    var str1 = "ws://";
+    //var str2 = ip[0];    ///habilitar dentro del nao
+    var str2 ="127.0.0.1";
+    var str3 = ":8000/";
+    socket = str1.concat(str2);
+    //var person = prompt("Please enter your name", "Leo");
+
+    socket=socket.concat(str3);
+
+ document.myform.url.value =socket ;
+ 
+   
+  }
+function disableAll()
+  {
+    
+    document.myform.inputtext.disabled = true;
+   document.myform.chatBtn.disabled = true;
+  document.myform.uharrBtn.disabled = true;
+document.myform.dharrBtn.disabled = true;
+document.myform.lharrBtn.disabled = true;
+document.myform.rharrBtn.disabled = true;
+ document.myform.udarrBtn.disabled = true;
+document.myform.ddarrBtn.disabled = true;
+document.myform.ldarrBtn.disabled = true;
+document.myform.rdarrBtn.disabled = true;
+
+  }
+function enableAll()
+  {
+    
+    document.myform.inputtext.disabled = false;
+   document.myform.chatBtn.disabled = false;
+ document.myform.uharrBtn.disabled =false;
+document.myform.dharrBtn.disabled = false;
+document.myform.lharrBtn.disabled = false;
+document.myform.rharrBtn.disabled = false;
+ document.myform.udarrBtn.disabled =false;
+document.myform.ddarrBtn.disabled = false;
+document.myform.ldarrBtn.disabled = false;
+document.myform.rdarrBtn.disabled = false;
+
+
+  }
+
+
+function createBtn()
+  {
+     var placeHolder = document.getElementById("conn");
+    
+      var myButton  = document.createElement("INPUT");
+     myButton  .setAttribute("type", "button");
+     myButton  .setAttribute("class", "buttonC");
+     myButton  .setAttribute("name", "disconnectButton");
+      myButton  .setAttribute("onClick","doDisconnect()")
+      myButton.value = "Disconect";
+     placeHolder.appendChild(myButton);
+     
+     
+}
+  function doConnect()
+  {
+    
+       
+          
+          websocket = new WebSocket(socket);
+          websocket.onopen = function(evt) { onOpen(evt) };
+          websocket.onclose = function(evt) { onClose(evt) };
+          websocket.onmessage = function(evt) { onMessage(evt) };
+          websocket.onerror = function(evt) { onError(evt) };
+  
+    
+
+  }
+
+  function onOpen(evt)
+  {
+     
+     if (connected==0) createBtn();
+     document.myform.connectButton.style.visibility="hidden";
+    document.myform.disconnectButton.style.visibility="visible";
+   
+writeToScreen("connected\n");
+   enableAll()
+ //document.myform.connectButton.disabled = true;
+ //document.myform.disconnectButton.disabled = false;
+ //document.myform.sendButton.disabled = false;
+  }
+
+  function onClose(evt)
+  {
+   
+   connected=0;
+     
+ 
+ document.myform.disconnectButton.style.visibility="hidden";
+document.myform.connectButton.style.visibility="visible";
+  disableAll()
+  }
+
+  function onMessage(evt)
+  {
+    writeToScreen("response: " + evt.data + '\n');
+    //window.alert("data:text/javascript;base64,"+ evt.data);
+    //arr[0].src = "data:text/javascript;base64,"+ evt.data;
+  }
+
+  function onError(evt)
+  {
+    writeToScreen('error: ' + evt.data + '\n');
+
+ websocket.close();
+
+  disableAll();
+
+  }
+
+  function doSend(message)
+  {
+    writeToScreen("sent: " + message + '\n');
+   
+    websocket.send(message );
+      document.myform.inputtext.value="";
+    
+      }
+
+  function writeToScreen(message)
+  {
+    document.myform.nao_chat.value = message
+
+
+ //document.myform.outputtext.scrollTop = document.myform.outputtext.scrollHeight;
+
+  }
+
+  window.addEventListener("load", init(), false);
+
+
+   function sendText() {
+     msg=document.myform.inputtext.value;
+     doSend(msg);
+   }
+  
+ function doChat() {
+    
+      str2= "SAY ";
+     str3 =document.myform.inputtext.value;
+     msg= str2.concat(str3);
+     doSend(msg);
+   }
+ 
+  function clearText() {
+  document.myform.outputtext.value = "";
+   }
+
+   function doDisconnect() {
+  websocket.close();
+   }
+  var i=0;
+  function slide(){
+      document.getElementById("image1").src= arr[i].src;
+      i++;
+      if(i==arr.length){
+      i=0;
+  }
+  setTimeout(function(){ slide(); },1);
+}
+</script>
+<form name="myform">
+<nav>
+<div id = "conn" class="wrapper">
+    <input  onClick="doConnect()" name=connectButton class="buttonC" type="button" value="Connect"  />
+    
+</div>
+
+<div id="head">
+  <input type="button" name ="uharrBtn" class="button buttonF" onmousedown="doSend('FORWARD')"  onmouseup="doSend('STOP')" disabled value="&uArr;"/><br>
+  <input type="button" name ="lharrBtn" class="button buttonF" onmousedown="doSend('TURNLEFT')"  onmouseup="doSend('STOP')" disabled value="&lArr;"/>
+  <<input type="button" name ="rharrBtn" class="button buttonF" onmousedown="doSend('TURNRIGHT')"  onmouseup="doSend('STOP')" disabled value="&rArr;"/><br>
+  <input type="button" name ="dharrBtn" class="button buttonF" onmousedown="doSend('BACK')"  onmouseup="doSend('STOP')" disabled value="&dArr;"/>
+</div>
+
+<div id="arrows">
+  <input type="button"  name ="udarrBtn" class="button buttonF" onmousedown="doSend('FORWARD')"  onmouseup="doSend('STOP')" disabled value="&uArr;"/><br>
+  <input type="button" name ="ldarrBtn" class="button buttonF" onmousedown="doSend('TURNLEFT')"  onmouseup="doSend('STOP')" disabled value="&lArr;"/>
+  <<input type="button" name ="rdarrBtn" class="button buttonF" onmousedown="doSend('TURNRIGHT')"  onmouseup="doSend('STOP')"  disabled value="&rArr;"/><br>
+  <input type="button" name ="ddarrBtn" class="button buttonF" onmousedown="doSend('BACK')" onmouseup="doSend('STOP')" disabled value="&dArr;"/>
+</div>
+
+<div id="chat_bar_l">
+    <input class="button4" onClick="doChat()"  name ="chatBtn" type="button" value="Chat" disabled />
+    <input class="text chat_txt" name="inputtext" value="Ciao" disabled/>
+</div>
+<div id="chat_bar_r">
+    <input class="button4" onClick="sendText()"  type="button" value="Nao" disabled />
+    <input class="text nao_txt" name="nao_chat" disabled/>
+</div>
+</nav>
+</form>
+</html>
